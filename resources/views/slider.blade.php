@@ -4,7 +4,7 @@
             <ul>          
                 @foreach($slides as $slide)
                     <li data-index="rs-{{$loop->iteration}}" data-transition="boxslide" data-slotamount="7" data-easein="default" data-easeout="default" data-masterspeed="300" data-rotate="0" data-saveperformance="off" data-title="Slide" data-description="">
-                      <img src="images/{{ $slide->image }}" alt="" width="1920" height="815" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                      <img src="{{ asset($slide->image) }}" alt="" width="1920" height="815" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
 
                       <div class="tp-caption mfnrsjetlargewhite tp-resizeme" id="slide-{{$loop->iteration}}-layer-1" data-x="left" data-hoffset="80" data-y="bottom" data-voffset="200" data-width="auto" data-height="auto" data-transform_idle="" data-transform_in="x:50px;opacity:0;s:600;e:Power3.easeInOut;" data-transform_out="auto:auto;s:300;" data-start="900" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 5; min-width: auto; min-height: auto; white-space: nowrap; max-width: auto; max-height: auto; font-size: 70px; line-height: 70px; font-weight: 500; color: rgba(255, 255, 255, 1.00);font-family:'Ubuntu';text-shadow: 2px 2px #000;">
                             {{ $slide->title }}
