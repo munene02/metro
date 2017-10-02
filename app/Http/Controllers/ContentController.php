@@ -53,6 +53,20 @@ class ContentController extends Controller
         return view('journal-page', compact('journals'));
     }
 
+    public function journalEntry(Request $request)
+    {
+        if($request->id){
+            $journal = Journal::where('id', '=', $request->id)->first();
+
+             return view('journal-entry', compact('journal'));
+        }
+        else{
+
+            return redirect('/journal');
+        }
+     
+    }
+
     public function projectsPage()
     {
         

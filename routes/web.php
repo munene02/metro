@@ -19,6 +19,8 @@ Route::get('/projects', 'ContentController@projectsPage');
 Route::get('/journal', 'ContentController@journalPage');
 Route::get('/contact', 'ContentController@contactPage');
 
+Route::get('/journal/{id}', 'ContentController@journalEntry');
+
 Route::get('/image', 'ContentController@image');
 Route::post('imageAdd', 'AdminController@imageAdd');
 
