@@ -28,7 +28,9 @@ class AdminController extends Controller
 		$slider->status = 'no';
 		$slider->save();
 
-		return '<img src="'.$url.'">';
+		alert()->success('Slider Added', 'The Slider was successfully added.');
+     
+        return redirect('/home');
 		
 
     }

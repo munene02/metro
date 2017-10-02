@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="{{ asset("/css/dropzone/dropzone.min.css") }}">
 
   <link rel="stylesheet" href="{{ asset("/plugins/rs-plugin/css/settings.css") }}">
+  <link rel="stylesheet" type="text/css" href="/css/sweetalert.css">
   <!-- <meta name="csrf-token" content="{{ csrf_token() }}"> -->
 </head>
   @yield('content')
@@ -40,6 +41,8 @@
     <script src="{{ asset("/js/translate3d.js") }}"></script>
     <script src="{{ asset("/js/scripts.js") }}"></script>
     <script src="{{ asset("/css/dropzone/dropzone.min.js") }}"></script>
+    <script src="/js/sweetalert.js"></script>
+    @include('Alerts::alerts')
     @include('script')
     
     <script id="mfn-dnmc-retina-js">
