@@ -36,7 +36,7 @@
                                     <div class="column mcb-column one column_column">
                                         <div class="column_attr clearfix" >
                                             
-                                            <img src="{{ asset($journal['cover']) }}" alt="{{ $journal['title'] }}" style="padding:20px 20px 0px 20px;" />
+                                            <img src="{{ asset($journal['cover']) }}" alt="{{ $journal['title'] }}" />
 
                                         </div>
                                     </div>
