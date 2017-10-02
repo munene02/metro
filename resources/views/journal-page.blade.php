@@ -42,10 +42,10 @@
                                     </div>
                                     <div class="column mcb-column two-third column_column" >
                                         <div class="column_attr clearfix">
-                                            <h3 style="padding:  0px 20px 0px 20px; color: #02bbca;">{{$journal->title}}<br>
-                                                <small style="font-size: 11px;padding-top: 0px;margin-top: 0px;margin-left: 5px;color: #999;">{{ Carbon\Carbon::parse($journal->created_at)->format('D jS, M, Y') }}</small></h3>
+                                            <h3 style="padding:  0px 20px 0px 30px; color: #02bbca;">{{$journal->title}}<br>
+                                                <small style="font-size: 11px;padding-top: 0px;margin-top: 0px;margin-left: 0px;color: #999;">{{ Carbon\Carbon::parse($journal->created_at)->format('D jS, M, Y') }}</small></h3>
 
-                                            <p style="text-align: justify;padding: 0px 20px 0px 20px;line-height: 19px;color: #333;">
+                                            <p style="text-align: justify;padding: 0px 20px 0px 30px;line-height: 19px;color: #333;">
 
                                                 {!! $journal->description !!}
                                                 <br>
