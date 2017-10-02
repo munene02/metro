@@ -11,6 +11,7 @@ use App\Text;
 use App\Background;
 use App\Image;
 use App\Service;
+use App\Journal;
 
 class ContentController extends Controller
 {
@@ -45,15 +46,18 @@ class ContentController extends Controller
         return view('service-page', compact('services', 'background'));
     }
 
+    public function journalPage()
+    {
+        $journals = Journal::all();
+
+        return view('journal-page', compact('journals'));
+    }
+
     public function projectsPage()
     {
         
     }
-
-    public function journalPage()
-    {
-        
-    }
+  
 
     public function contactPage()
     {
