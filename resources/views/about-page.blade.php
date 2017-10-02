@@ -26,7 +26,8 @@
                                         <div class="column mcb-column one column_column">
                                             <div class="column_attr clearfix" style="background-color:#ffffff; ">
                                                 <h2 style="padding: 25px 25px 0px 25px; 22px;color: #333;">About Us</h2>
-                                                <p style="text-align: justify;padding: 0px 25px 25px 25px;line-height: 22px;color: #333;">{{$text['text']}}</p>
+                                                <p style="text-align: justify;padding: 0px 25px 25px 25px;line-height: 22px;color: #333;">
+                                                {{!!$text['text']!!}}</p>
                                             </div>
                                         </div>
                                     </div>
