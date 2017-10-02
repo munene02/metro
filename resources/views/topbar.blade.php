@@ -13,19 +13,22 @@
               <div class="menu_wrapper">
                   <nav id="menu" class="menu-main-menu-container">
                       <ul id="menu-main-menu" class="menu">
-                          <li class="current-menu-item">
+                          <li  @php if($page=='home') echo 'class="current-menu-item"'; @endphp >
                               <a href="/"><span>HOME</span></a>
                           </li>
-                          <li>
+                          <li  @php if($page=='about') echo 'class="current-menu-item"'; @endphp >
+                              <a href="/aboutUs"><span>ABOUT US</span></a>
+                          </li>
+                          <li  @php if($page=='service') echo 'class="current-menu-item"'; @endphp >
                               <a href="/services"><span>SERVICES</span></a>
                           </li>
-                          <li>
+                          <li  @php if($page=='project') echo 'class="current-menu-item"'; @endphp >
                               <a href="/projects"><span>PROJECTS</span></a>
                           </li>
-                          <li>
+                          <li  @php if($page=='journal') echo 'class="current-menu-item"'; @endphp >
                               <a href="/journal"><span>JOURNAL</span></a>
                           </li>
-                          <li>
+                          <li  @php if($page=='contact') echo 'class="current-menu-item"'; @endphp >
                               <a href="/contact"><span>CONTACT</span></a>
                           </li>
                       </ul>

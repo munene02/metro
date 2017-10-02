@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'ContentController@homePage');
+Route::get('/services', 'ContentController@servicesPage');
+Route::get('/aboutUs', 'ContentController@aboutUsPage');
 
 Route::get('/login', function () { 
     return view('login');

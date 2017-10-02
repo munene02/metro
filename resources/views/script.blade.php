@@ -8,6 +8,25 @@
     <script src="{{ asset("/plugins/rs-plugin/js/extensions/revolution.extension.navigation.min.js") }}"></script>
     <script src="{{ asset("/plugins/rs-plugin/js/extensions/revolution.extension.migration.min.js") }}"></script>
     <script src="{{ asset("/plugins/rs-plugin/js/extensions/revolution.extension.parallax.min.js") }}"></script>
+
+    <script>
+
+        var revapi2;
+        jQuery(document).ready(function() {
+            revapi2 = jQuery("#rev_slider").revolution({
+                sliderType: "standard",
+                sliderLayout: "auto",
+                delay: 4000,
+                navigation: {
+                    arrows: {
+                        enable: true
+                    }
+                },
+                gridwidth: 1440,
+                gridheight:900
+            });
+        }); /*ready*/
+    </script>
   
     <script>
     var tpj = jQuery;

@@ -15,18 +15,22 @@
         <div class="content_wrapper clearfix">
           <div class="sections_group">
               <div class="entry-content">
-                  <div class="section mcb-section equal-height-wrap" style="padding-top:110px; padding-bottom:60px">
-                      <div class="section_wrapper mcb-section-inner">
-                          <div class="wrap mcb-wrap three-fifth  valign-middle clearfix" style="padding:0 5% 0 0">
-                            <div class="mcb-wrap-inner">
-                                <div class="column mcb-column one column_column  column-margin-30px">
-                                    <div class="column_attr clearfix">
-                                        <h2 style="display:inline-block">Manage Sliders - Add A Slider</h2>
-                                        <h6>Upload a Slider image below;</h6>
-                                    </div>
-                                </div>
-                              <div class="column mcb-column column_column">
-                                <div class="column_attr clearfix" style="padding:0 10% 0 0">
+
+                  <div class="section mcb-section" style="padding-top:110px; padding-bottom:60px;">
+                          <div class="section_wrapper mcb-section-inner">
+                              <div class="wrap mcb-wrap one valign-top clearfix">
+                                 
+                                      <div class="column mcb-column one column_column">
+                                          <div class="column_attr clearfix">
+                                              <h2>Add Slider</h2>
+                                          </div>
+                                      </div>
+                              </div>
+                              <div class="wrap mcb-wrap one  valign-top clearfix" style="margin-top:-5px">
+                                  <div class="mcb-wrap-inner">
+                                      <div class="column mcb-column one column_column">
+                                        <div class="column_attr clearfix" style="padding:0 10% 0 0">
+                                        <h6>Upload a Slider image below;</h6>  
                                   <form enctype="multipart/form-data" method="POST" action="/newSliders">
                                       {!! csrf_field() !!}
                                       @if(count($errors) > 0)
@@ -40,24 +44,24 @@
 
                                       @endif
 
-                                      <div class="form-group">
-                                        <label for="slider">Slider:</label>
+                                      <div class="form-group ">
+                                        <label for="slider">Slider Image:</label>
                                         <input type="file" name="slider" id="slider" class="form-control" required/>
                                         <br/><br/>
                                       </div>
 
                                       <div class="form-group">
                                         <label for="title">Slider Title:</label>
-                                        <input type="text" name="title" id="title" class="form-control" value="{{ old('title') }}" required>
+                                        <input type="text" name="title" id="title" class="form-control" style="width: 600px;" value="{{ old('title') }}" required>
                                       </div>
 
                                       <div class="form-group">
                                         <label for="caption">Slider Caption:</label>
-                                        <input type="text" name="caption" id="caption" class="form-control" value="{{ old('caption') }}" required>
+                                        <input type="text" cols="100" name="caption" id="caption" class="form-control" style="width: 600px;" value="{{ old('caption') }}" required>
                                       </div>
                                       <div class="col-md-12">
                                         <div class="form-group">
-                                                <button type="submit" class="btn btn-primary">Add SLIDER</button> 
+                                                <button type="submit" class="btn btn-primary">ADD SLIDER</button> 
                                         </div>
                                       </div>
                                     
@@ -66,14 +70,38 @@
                                   <hr class="no_line" style="margin:0 auto 20px">
                                 
                                 </div>
+                                        
+                                      </div>
+                                  </div>
                               </div>
-
-                            </div>
+                              <div class="wrap mcb-wrap one valign-top clearfix">
+                                 
+                                      <div class="column mcb-column one column_column">
+                                          <div class="column_attr clearfix">
+                                              <h2>Current Sliders</h2>
+                                          </div>
+                                      </div>
+                              </div>
+                              <div class="wrap mcb-wrap one  valign-top clearfix" style="margin-top:-25px">
+                                  <div class="mcb-wrap-inner">
+                                    @foreach($slides as $slide)
+                                      <div class="column mcb-column one column_column">
+                                          <div class="column_attr clearfix" style=" padding:0 15% 0 0;">
+                                              <img src="{{ asset($slide->image) }}" alt="" width="200" height="125" style="padding-right:20px; " />
+                                              <p style="display: inline-block;vertical-align:top;" ><big>{{$loop->iteration}}. {{ $slide->title }}
+                                              </big><br/>{{ $slide->caption }} <br/><br/>
+                                               <input type="button" class="btn-edit" value="EDIT" onclick="location.href = '/editSlider';">
+                                               <input type="button" class="btn-remove" value="REMOVE" onclick="location.href = '/removeSlider';">
+                                               <input type="button" class="btn-change" value="CHANGE IMAGE" onclick="location.href = '/changeImage';">
+                                             </p>
+                                               
+                                              
+                                          </div>
+                                      </div>
+                                    @endforeach  
+                                  </div>         
                           </div>
-
-                      </div>
                   </div>
-
               </div>
           </div>
       </div>

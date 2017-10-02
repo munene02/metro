@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Slider;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $slides = Slider::where('status', '=', 'no')->orderBy('updated_at', 'desc')->get();
+
+        return view('home', compact('slides'));
     }
 }

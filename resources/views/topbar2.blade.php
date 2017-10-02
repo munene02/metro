@@ -13,25 +13,16 @@
               <div class="menu_wrapper">
                   <nav id="menu" class="menu-main-menu-container">
                       <ul id="menu-main-menu" class="menu">
-                          <li class="current-menu-item">
-                              <a href="/home"><span>Admin Home</span></a>
-                          </li>
 
-                          <li>
-                              <a href="#"><span>Sliders</span></a>
-                                <ul class="sub-menu">
-                                  <li>
-                                    <a href="/">Add Slider</a>
-                                  </li>
-                                  <li>
-                                    <a href="/">Remove Slider</a>
-                                  </li>
-                                </ul>      
+
+                          <li class="current-menu-item">
+                              <a href="/home"><span>SLIDERS</span></a>
+                                     
                           </li>
                           <li>
                             <a href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();"><strong>Logout</strong></a>
+                                        document.getElementById('logout-form').submit();"><span>LOGOUT</span></a>
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
                         </li>
                       </ul>

@@ -7,36 +7,32 @@ use GuzzleHttp\Client;
 
 use Illuminate\Http\Request;
 use App\Slider;
+use App\Text;
+use App\Background;
+use App\Image;
 class ContentController extends Controller
 {
     //show homepage
     public function homePage()
     {
-    	$slides = Slider::where('status', '=', 'no')->get();
+    	$slides = Slider::where('status', '=', 'no')->orderBy('updated_at', 'desc')->get();
 
         return view('home-page', compact('slides'));
 
-        // $client = new Client();
+    }
 
-        // $res = $client->request('GET', 'https://jsonplaceholder.typicode.com/users')->getBody();
+    public function aboutUsPage()
+    {
+        $text = Text::where('page', '=', 'about')->first();
+        $background = Background::where('page', '=', 'about')->first();
+        $images = Image::where('page', '=', 'about')->get();
 
-        // $response = json_decode($res);
+        //return $text;
+        return view('about-page', compact('text', 'background', 'images'));
+    }
 
-        // foreach ($response as $res) {
-        // 	foreach ($res->address->geo as $g) {
-        // 		echo $g;
-        // 	}
-        // }
-
-        // //return $res;
-
-        // // foreach ($response as $k => $v) {
-        // // 	print_r($v['address']['geo']);
-        // // 	//echo $v->name;
-
-        // // }
-
-        //echo $response->getContents();
-
+    public function servicesPage()
+    {
+        
     }
 }
