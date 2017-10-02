@@ -34,4 +34,23 @@ class AdminController extends Controller
 		
 
     }
+    public function imageAdd(Request $request)
+    {
+
+        $request->file('slider');
+        $extension = $request->file('slider')->extension();
+
+        $time = Carbon::now()->timestamp;
+        $name = $time.'.'.$extension;
+
+        $request->slider->storeAs('public', $name);
+        $url = Storage::url($name);
+
+
+        alert()->success($name.' Added', 'The Image was successfully added.');
+     
+        return redirect('/image');
+        
+
+    }
 }

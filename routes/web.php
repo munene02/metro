@@ -14,6 +14,8 @@
 Route::get('/', 'ContentController@homePage');
 Route::get('/services', 'ContentController@servicesPage');
 Route::get('/aboutUs', 'ContentController@aboutUsPage');
+Route::get('/image', 'ContentController@image');
+Route::post('imageAdd', 'AdminController@imageAdd');
 
 Route::get('/login', function () { 
     return view('login');

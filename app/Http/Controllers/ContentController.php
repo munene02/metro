@@ -12,6 +12,10 @@ use App\Background;
 use App\Image;
 class ContentController extends Controller
 {
+    public function image()
+    {
+        return view('image');
+    }
     //show homepage
     public function homePage()
     {
