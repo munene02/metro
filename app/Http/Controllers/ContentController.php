@@ -50,7 +50,7 @@ class ContentController extends Controller
         
     }
 
-    public function contactsPage()
+    public function contactPage()
     {
         
     }
