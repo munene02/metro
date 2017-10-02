@@ -23,7 +23,7 @@
                                 <div class="mcb-wrap-inner">
                                     <div class="column mcb-column one column_column">
                                         <div class="column_attr clearfix">
-                                            <h2 style="text-shadow:#000 1px 2px 2px;color: #fff;">Journal</h2>
+                                            <h2 style="text-shadow:#000 1px 2px 2px;color: #8ac854;">Journal</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -43,7 +43,7 @@
                                     <div class="column mcb-column two-third column_column" >
                                         <div class="column_attr clearfix">
                                             <h3 style="padding: 20px 20px 0px 20px; color: #02bbca;">{{$journal->title}}<br>
-                                                <small style="font-size: 11px;padding-top: 0px;margin-top: 0px;margin-left: 5px;color: #999;">{{ Carbon\Carbon::parse($journal->date)->format('D jS, M, Y') }}</small></h3>
+                                                <small style="font-size: 11px;padding-top: 0px;margin-top: 0px;margin-left: 5px;color: #999;">{{ Carbon\Carbon::parse($journal->created_at)->format('D jS, M, Y') }}</small></h3>
 
                                             <p style="text-align: justify;padding: 0px 20px 0px 20px;line-height: 19px;color: #333;">
 

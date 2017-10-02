@@ -24,7 +24,7 @@
                                 <div class="mcb-wrap-inner">
                                     <div class="column mcb-column one column_column">
                                         <div class="column_attr clearfix">
-                                            <h2 style="text-shadow:#000 1px 2px 2px;color: #fff;">Services</h2>
+                                            <h2 style="text-shadow:#000 1px 2px 2px;color: #8ac854;">Services</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -34,7 +34,7 @@
                                     @foreach($services as $service)
                                     <div class="column mcb-column one-third column_column" style="padding-bottom:20px;">
                                         <div class="column_attr clearfix" style="background-color:#ffffff; ">
-                                            <h3 style="padding: 20px 20px 0px 20px; color: #333;">{{$service->title}}</h3>
+                                            <h3 style="padding: 20px 20px 0px 20px; color: #02bbca;"">{{$service->title}}</h3>
                                             <p style="text-align: justify;padding: 0px 20px 5px 20px;line-height: 19px;color: #333;">
                                                 {!! $service->description !!}
                                             </p>

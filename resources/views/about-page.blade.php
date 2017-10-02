@@ -25,7 +25,7 @@
                                     <div class="mcb-wrap-inner">
                                         <div class="column mcb-column one column_column">
                                             <div class="column_attr clearfix" style="background-color:#ffffff; ">
-                                                <h2 style="padding: 20px 25px 0px 25px; color: #333;">About Us</h2>
+                                                <h2 style="padding: 20px 25px 0px 25px; color: #8ac854;">About Us</h2>
                                                 <p style="text-align: justify;padding: 0px 25px 5px 25px;line-height: 19px;color: #333;">
                                                 {!! $text['text'] !!}</p>
                                             </div>

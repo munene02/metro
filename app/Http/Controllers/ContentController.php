@@ -48,7 +48,7 @@ class ContentController extends Controller
 
     public function journalPage()
     {
-        $journals = Journal::all();
+        $journals = Journal::orderBy('created_at','desc')->get();
 
         return view('journal-page', compact('journals'));
     }
