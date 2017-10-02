@@ -31,21 +31,21 @@
                             
                             <div class="wrap mcb-wrap one valign-top clearfix" >
                                 
-                                <div class="mcb-wrap-inner one valign-top clearfix" style="background-color:#fff; margin-bottom: 20px;padding-top:25px;">
+                                <div class="mcb-wrap-inner one valign-top clearfix" style="background-color:#fff; ">
                                     
                                     <div class="column mcb-column one column_column">
                                         <div class="column_attr clearfix" >
                                             
-                                            <img src="{{ asset($journal['cover']) }}" alt="{{ $journal['title'] }}" />
+                                            <img src="{{ asset($journal['cover']) }}" alt="{{ $journal['title'] }}" style="padding-top: 10px;" />
 
                                         </div>
                                     </div>
                                     <div class="column mcb-column one column_column" >
                                         <div class="column_attr clearfix">
-                                            <h3 style="padding: 5px 20px 0px 20px; color: #02bbca;">{{$journal['title']}}<br>
-                                                <small style="font-size: 11px;padding-top: 0px;margin-top: 0px;margin-left: 5px;color: #999;">{{ Carbon\Carbon::parse($journal['created_at'])->format('D jS, M, Y') }}</small></h3>
+                                            <h3 style="padding: 5px 20px 0px 50px; color: #02bbca;">{{$journal['title']}}<br>
+                                                <small style="font-size: 11px;padding-top: 0px;margin-top: 0px;margin-left: 0x;color: #999;">{{ Carbon\Carbon::parse($journal['created_at'])->format('D jS, M, Y') }}</small></h3>
 
-                                            <p style="text-align: justify;padding: 0px 20px 0px 20px;line-height: 19px;color: #333;">
+                                            <p style="text-align: justify;padding: 0px 50px 0px 50px;line-height: 19px;color: #333;">
 
                                                 {!! $journal['details'] !!}
                                                 <br>

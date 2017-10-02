@@ -7,3 +7,7 @@ input.btn-remove{background-color:#05abf9; }
 input.btn-remove:hover{background-color:#0373a7; }
 input.btn-change{background-color:#028fd0; }
 input.btn-change:hover{background-color:#0373a7; }
+img {
+    width: 100%;
+    height: auto;
+}
