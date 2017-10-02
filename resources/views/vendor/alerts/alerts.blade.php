@@ -4,7 +4,7 @@
             title: "{!! session('flash_message.title') !!}",
             text:  "{!! session('flash_message.message') !!}",
             type: "{{ session('flash_message.type') }}",
-            timer: 3200,
+            timer: 5000,
             showConfirmButton: false
         });
     </script>

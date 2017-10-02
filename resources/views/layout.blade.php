@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="{{ asset("/css/dropzone/dropzone.min.css") }}">
 
   <link rel="stylesheet" href="{{ asset("/plugins/rs-plugin/css/settings.css") }}">
-  <link rel="stylesheet" type="text/css" href="/css/sweetalert.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.css">
   <!-- <meta name="csrf-token" content="{{ csrf_token() }}"> -->
 </head>
   @yield('content')
@@ -41,7 +41,7 @@
     <script src="{{ asset("/js/translate3d.js") }}"></script>
     <script src="{{ asset("/js/scripts.js") }}"></script>
     <script src="{{ asset("/css/dropzone/dropzone.min.js") }}"></script>
-    <script src="/js/sweetalert.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.js"></script>
     @include('Alerts::alerts')
     @include('script')
     
