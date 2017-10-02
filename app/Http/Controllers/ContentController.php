@@ -10,6 +10,8 @@ use App\Slider;
 use App\Text;
 use App\Background;
 use App\Image;
+use App\Service;
+
 class ContentController extends Controller
 {
     public function image()
@@ -37,7 +39,10 @@ class ContentController extends Controller
 
     public function servicesPage()
     {
-        
+        $services = Service::all();
+        $background = Background::where('page', '=', 'service')->first();
+
+        return view('service-page', compact('services', 'background'));
     }
 
     public function projectsPage()
