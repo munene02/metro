@@ -12,8 +12,13 @@
 */
 
 Route::get('/', 'ContentController@homePage');
-Route::get('/services', 'ContentController@servicesPage');
+
 Route::get('/aboutUs', 'ContentController@aboutUsPage');
+Route::get('/services', 'ContentController@servicesPage');
+Route::get('/projects', 'ContentController@projectsPage');
+Route::get('/journal', 'ContentController@journalPage');
+Route::get('/contact', 'ContentController@contactPage');
+
 Route::get('/image', 'ContentController@image');
 Route::post('imageAdd', 'AdminController@imageAdd');
 

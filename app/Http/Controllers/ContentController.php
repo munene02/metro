@@ -39,4 +39,19 @@ class ContentController extends Controller
     {
         
     }
+
+    public function projectsPage()
+    {
+        
+    }
+
+    public function journalPage()
+    {
+        
+    }
+
+    public function contactsPage()
+    {
+        
+    }
 }
