@@ -69,7 +69,7 @@ class ContentController extends Controller
 
     public function projectsPage()
     {
-        
+        return view('project-page');
     }
   
 

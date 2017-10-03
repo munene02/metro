@@ -23,7 +23,7 @@
                                 <div class="mcb-wrap-inner">
                                     <div class="column mcb-column one column_column">
                                         <div class="column_attr clearfix">
-                                            <h2 style="text-shadow:#000 1px 2px 2px;color: #8ac854;">Journal</h2>
+                                            <h2 style="text-shadow:#000 1px 2px 2px;color: #fff;">Journal</h2>
                                         </div>
                                     </div>
                                 </div>
