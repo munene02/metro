@@ -76,10 +76,11 @@ class ContentController extends Controller
 
     public function projectsPage()
     {
-        $projects = Project::get();
+        //$projects = Project::get();
+        $journals = Journal::orderBy('created_at','desc')->get();
 
-        return 'hello';
-        return $projects;
+
+        return $journals;
         return view('project-page', compact('projects'));
     }
 
