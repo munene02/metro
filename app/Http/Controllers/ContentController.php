@@ -78,7 +78,7 @@ class ContentController extends Controller
     {
         $projects = Project::orderBy('created_at','desc')->get();
 
-        //return $projects;
+        return $projects;
         return view('project-page', compact('projects'));
     }
 
