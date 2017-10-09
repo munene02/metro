@@ -76,7 +76,8 @@ class ContentController extends Controller
 
     public function projectsPage()
     {
-        $projects = Project::orderBy('created_at','desc')->get();
+        //$projects = Project::orderBy('created_at','desc')->get();
+        $projects = Project::where('id', '=', '1')->first();
         //$journals = Journal::orderBy('created_at','desc')->get();
 
 
