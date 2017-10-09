@@ -35,7 +35,7 @@ class ContentController extends Controller
         //$background = Background::where('page', '=', 'about')->first();
         $images = Image::where([['page', '=', 'about'],['status', '=', 'no']])->get();
 
-        return $text;
+        //return $text;
         return view('about-page', compact('text', 'images'));
     }
 
@@ -49,7 +49,7 @@ class ContentController extends Controller
         $pimages = Image::where([['page', '=', 'plumbing'],['status', '=', 'no']])->get();
         $fimages = Image::where([['page', '=', 'furniture'],['status', '=', 'no']])->get();
 
-        return $pimages;
+        //return $pimages;
         return view('service-page', compact('cservice','fservice','pservice', 'cimages', 'pimages', 'fimages'));
     }
 
