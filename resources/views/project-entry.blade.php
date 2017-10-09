@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-@php $page='journal'; @endphp
+@php $page='project'; @endphp
 
 <body class="home template-slider color-custom style-simple layout-full-width button-flat if-zoom no-content-padding header-transparent header-fw minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-no-borders menuo-right footer-copy-center mobile-tb-center mobile-side-slide mobile-mini-mr-ll tablet-sticky mobile-header-mini mobile-sticky tr-content">
 
@@ -23,38 +23,48 @@
                                 <div class="mcb-wrap-inner">
                                     <div class="column mcb-column one column_column">
                                         <div class="column_attr clearfix">
-                                            <h2 style="text-shadow:#000 1px 2px 2px;color: #fff;">Journal</h2>
+                                            <h2 style="text-shadow:#000 1px 2px 2px;color: #fff;">Projects</h2>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="wrap mcb-wrap one valign-top clearfix" >
-                                @foreach($journals as $journal)
-                                <div class="mcb-wrap-inner one valign-top clearfix journal"  style="background-color:#fff; margin-bottom: 20px;padding-top:25px;">
+                                
+                                <div class="mcb-wrap-inner one valign-top clearfix" style="background-color:#fff; ">
                                     
-                                    <div class="column mcb-column one-third column_column">
+                                    <div class="column mcb-column one column_column">
                                         <div class="column_attr clearfix" >
-                                            <a href="/journal/{{$journal->id}}" target="_blank"><img src="{{ asset($journal->cover) }}" alt="{{$journal->title}}" style="padding-left: 20px;" /></a>
 
+                                            <div class="rev_slider_wrapper">
+                                                  <div id="rev_slider" class="rev_slider" data-version="5.0">
+                                                      <ul style="list-style: none;padding-top: 20px;">
+                                                        @foreach($images as $image)
+                                                          <li data-transition="fade" style="text-shadow:#000 1px 2px 2px;">
+                                                              <img src="{{ asset($image->image) }}" alt="{{ $project['title'] }}" width="600" height="375" >
+                                                          </li>
+                                                          @endforeach
+                                                      </ul>
+                                                  </div>
+                                                </div>
+                                                <!-- Rev -->
                                         </div>
                                     </div>
-                                    <div class="column mcb-column two-third column_column" >
+                                    <div class="column mcb-column one column_column" >
                                         <div class="column_attr clearfix">
-                                            <h3 style="padding:  0px 20px 0px 30px;"><a href="/journal/{{$journal->id}}" style=" color: #02bbca;">{{$journal->title}}</a><br>
-                                                <small style="font-size: 11px;padding-top: 0px;margin-top: 0px;margin-left: 0px;color: #999;">{{ Carbon\Carbon::parse($journal->created_at)->format('D jS, M, Y') }}</small></h3>
+                                            <h3 style="padding: 5px 20px 0px 40px; color: #02bbca;">{{$project['title']}}<br></h3>
 
-                                            <p style="text-align: justify;padding: 0px 20px 0px 30px;line-height: 19px;color: #333;">
+                                            <p style="text-align: justify;padding: 0px 40px 0px 40px;line-height: 19px;color: #333;">
 
-                                                {!! $journal->description !!}
+                                                {!! $project['details'] !!}
                                                 <br>
-                                                <a href="/journal/{{$journal->id}}" target="_blank">READ MORE...</a>
+                                                
                                             </p>
 
                                         </div>
                                     </div>
                                         
-                                </div>@endforeach
+                                </div>
                             </div>
                             
                         </div>

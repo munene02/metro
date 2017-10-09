@@ -18,7 +18,7 @@
             <div class="sections_group">
                 <div class="entry-content">
                     <div class="section mcb-section" style="padding-top:120px; padding-bottom:120px;" data-parallax="3d">
-                    <img class="mfn-parallax" src="{{ asset($background['background']) }}" alt="" style="opacity:0">
+
                         <div class="section_wrapper mcb-section-inner">
                             <div class="wrap mcb-wrap one valign-top clearfix">
                                 <div class="mcb-wrap-inner">
@@ -29,19 +29,81 @@
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="wrap mcb-wrap one valign-top clearfix">
                                 <div class="mcb-wrap-inner">
-                                    @foreach($services as $service)
+
                                     <div class="column mcb-column one-third column_column" style="padding-bottom:20px;">
                                         <div class="column_attr clearfix" style="background-color:#ffffff; ">
-                                            <h3 style="padding: 20px 20px 0px 20px; color: #02bbca;"">{{$service->title}}</h3>
+                                            <h3 style="padding: 20px 20px 0px 20px; color: #02bbca;"">{{ $cservice['title'] }}</h3>
                                             <p style="text-align: justify;padding: 0px 20px 5px 20px;line-height: 19px;color: #333;">
-                                                {!! $service->description !!}
+                                                {!! $cservice['description'] !!}
                                             </p>
-                                            <img class="visible_photo scale-with-grid" src="{{ asset($service->image) }}" alt="{{$service->title}}" />
+
+                                                <div class="rev_slider_wrapper">
+                                                  <div id="construction" class="rev_slider" data-version="5.0">
+                                                      <ul style="list-style: none;">
+                                                        @foreach($cimages as $cimage)
+                                                          <li data-transition="fade" style="text-shadow:#000 1px 2px 2px;">
+                                                              <img src="{{ asset($cimage->image) }}" alt="" width="600" height="375">
+                                                             
+                                                          </li>
+                                                          @endforeach
+                                                      </ul>
+                                                  </div>                                                  
+                                                </div>
+                                                <!--End -->
                                         </div>
                                     </div>
-                                    @endforeach    
+
+                                    <div class="column mcb-column one-third column_column" style="padding-bottom:20px;">
+                                        <div class="column_attr clearfix" style="background-color:#ffffff; ">
+                                            <h3 style="padding: 20px 20px 0px 20px; color: #02bbca;"">{{ $pservice['title'] }}</h3>
+                                            <p style="text-align: justify;padding: 0px 20px 5px 20px;line-height: 19px;color: #333;">
+                                                {!! $pservice['description'] !!}
+                                            </p>
+
+                                                <div class="rev_slider_wrapper">
+                                                  <div id="plumbing" class="rev_slider" data-version="5.0">
+                                                      <ul style="list-style: none;">
+                                                        @foreach($pimages as $pimage)
+                                                          <li data-transition="fade" style="text-shadow:#000 1px 2px 2px;">
+                                                              <img src="{{ asset($pimage->image) }}" alt="" width="600" height="375">
+                                                             
+                                                          </li>
+                                                          @endforeach
+                                                      </ul>
+                                                  </div>                                                  
+                                                </div>
+                                                <!--End -->
+                                        </div>
+                                    </div>
+
+                                    <div class="column mcb-column one-third column_column" style="padding-bottom:20px;">
+                                        <div class="column_attr clearfix" style="background-color:#ffffff; ">
+                                            <h3 style="padding: 20px 20px 0px 20px; color: #02bbca;"">{{ $fservice['title'] }}</h3>
+                                            <p style="text-align: justify;padding: 0px 20px 5px 20px;line-height: 19px;color: #333;">
+                                                {!! $fservice['description'] !!}
+                                            </p>
+
+                                                <div class="rev_slider_wrapper">
+                                                  <div id="furniture" class="rev_slider" data-version="5.0">
+                                                      <ul style="list-style: none;">
+                                                        @foreach($fimages as $fimage)
+                                                          <li data-transition="fade" style="text-shadow:#000 1px 2px 2px;">
+                                                              <img src="{{ asset($fimage->image) }}" alt="" width="600" height="375">
+                                                             
+                                                          </li>
+                                                          @endforeach
+                                                      </ul>
+                                                  </div>                                                  
+                                                </div>
+                                                <!--End -->
+                                        </div>
+                                    </div>
+
+
+    
                                 </div>
                             </div>
                         </div>

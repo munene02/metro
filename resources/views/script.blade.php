@@ -27,6 +27,48 @@
             });
         }); /*ready*/
     </script>
+    <script>
+
+        var revapi3;
+        jQuery(document).ready(function() {
+            revapi3 = jQuery("#construction").revolution({
+                sliderType: "standard",
+                sliderLayout: "auto",
+                delay: 4000,
+                gridwidth: 1440,
+                gridheight:900,
+                disableProgressBar: "on",
+            });
+        }); /*ready*/
+    </script>
+    <script>
+
+        var revapi4;
+        jQuery(document).ready(function() {
+            revapi4 = jQuery("#plumbing").revolution({
+                sliderType: "standard",
+                sliderLayout: "auto",
+                delay: 4500,
+                gridwidth: 1440,
+                gridheight:900,
+                disableProgressBar: "on",
+            });
+        }); /*ready*/
+    </script>
+    <script>
+
+        var revapi5;
+        jQuery(document).ready(function() {
+            revapi5 = jQuery("#furniture").revolution({
+                sliderType: "standard",
+                sliderLayout: "auto",
+                delay: 5000,
+                gridwidth: 1440,
+                gridheight:900,
+                disableProgressBar: "on",
+            });
+        }); /*ready*/
+    </script>
   
     <script>
     var tpj = jQuery;

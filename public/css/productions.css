@@ -1,7 +1,7 @@
 html {
 	background-image: url(../images/home_productions_bg.png);
 	background-repeat: repeat;
-	background-position: center top
+	background-position: center top 
 }
 #Footer {
 	background-image: url(../images/home_productions_footerbg1.png);
@@ -13,7 +13,8 @@ html {
 		display: block !important
 	}
 	.tr-menu #Top_bar #menu {
-		background: none !important
+		background: none !important;
+		
 	}
 	#Top_bar .menu>li>ul.mfn-megamenu {
 		width: 984px
@@ -1148,12 +1149,15 @@ html {
 }
 #Header_wrapper, #Intro {
 	background-color: #0a0a0a;
+
 }
 #Subheader {
 	background-color: rgba(247, 247, 247, 1);
+
 }
 .header-classic #Action_bar, .header-fixed #Action_bar, .header-plain #Action_bar, .header-split #Action_bar, .header-stack #Action_bar {
 	background-color: #292b33;
+
 }
 #Sliding-top {
 	background-color: #545454;
@@ -1286,6 +1290,8 @@ a.mfn-link-6:before {
 #Header .top_bar_left, .header-classic #Top_bar, .header-plain #Top_bar, .header-stack #Top_bar, .header-split #Top_bar, .header-fixed #Top_bar, .header-below #Top_bar, #Header_creative, #Top_bar #menu, .sticky-tb-color #Top_bar.is-sticky {
 	background-color: #0a0a0a;
 }
+/* edit */
+#Top_bar{border-bottom:#2ac5cc 1px solid;}
 #Top_bar .wpml-languages a.active, #Top_bar .wpml-languages ul.wpml-lang-dropdown {
 	background-color: #0a0a0a;
 }

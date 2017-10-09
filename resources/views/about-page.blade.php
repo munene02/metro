@@ -19,14 +19,22 @@
                     <div class="entry-content">
                         
                         <div class="section mcb-section" style="padding-top:120px; padding-bottom:120px;" data-parallax="3d">
-                        <img class="mfn-parallax" src="{{ asset($background['background']) }}" alt="" style="opacity:0">
                             <div class="section_wrapper mcb-section-inner">
-                                <div class="wrap mcb-wrap one-second  valign-top clearfix">
+                              <div class="wrap mcb-wrap one valign-top clearfix">
                                     <div class="mcb-wrap-inner">
                                         <div class="column mcb-column one column_column">
-                                            <div class="column_attr clearfix" style="background-color:#ffffff; ">
-                                                <h2 style="padding: 20px 25px 0px 25px; color: #333;">About Us</h2>
-                                                <p style="text-align: justify;padding: 0px 25px 5px 25px;line-height: 19px;color: #333;">
+                                            <div class="column_attr clearfix">
+                                                <h2 style="text-shadow:#000 1px 2px 2px;color: #fff;">About Us</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wrap mcb-wrap one-second  valign-top clearfix">
+                                    <div class="mcb-wrap-inner">
+                                        <div class="column mcb-column one column_column" style="background-color: #fff;">
+                                            <div class="column_attr clearfix">
+                                                
+                                                <p style="text-align: justify;padding: 39px;line-height: 19px;color: #333;">
                                                 {!! $text['text'] !!}</p>
                                             </div>
                                         </div>

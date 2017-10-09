@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-@php $page='journal'; @endphp
+@php $page='project'; @endphp
 
 <body class="home template-slider color-custom style-simple layout-full-width button-flat if-zoom no-content-padding header-transparent header-fw minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-no-borders menuo-right footer-copy-center mobile-tb-center mobile-side-slide mobile-mini-mr-ll tablet-sticky mobile-header-mini mobile-sticky tr-content">
 
@@ -30,7 +30,21 @@
                             </div>
                             
                             <div class="wrap mcb-wrap one valign-top clearfix" >
-                               
+                                @foreach($projects as $project)
+                                <div class="wrap mcb-wrap one-second valign-top journal" >
+                                    <div class="mcb-wrap-inner">
+                                        <div class="column mcb-column column_column clearfix">
+                                            <div class="column_attr clearfix" style="background-color:#ffffff;margin-bottom: 50px;">
+                                                <a href="/project/{{$project->id}}" target="_blank" style="text-decoration-line: none;">
+                                                  <img src="{{ asset($project->cover) }}" alt="{{$project->title}}" />
+                                                  <h3 style="padding-left:20px; color: #fff;margin-top:-120px;text-shadow:#000 2px 1px 1px;">
+                                                    {{ $project->title }}</h3></a>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
                             </div>
                             
                         </div>
