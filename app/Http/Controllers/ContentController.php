@@ -102,6 +102,6 @@ class ContentController extends Controller
 
     public function contactPage()
     {
-        
+        return 'hello';
     }
 }
