@@ -78,6 +78,7 @@ class ContentController extends Controller
     {
         $projects = Project::all();
 
+        dd('fikad');
         return $projects;
         return view('project-page', compact('projects'));
     }
