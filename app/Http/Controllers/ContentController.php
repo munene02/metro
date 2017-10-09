@@ -76,7 +76,7 @@ class ContentController extends Controller
 
     public function projectsPage()
     {
-        $projects = Project::orderBy('created_at','desc')->get();
+        $projects = Project::all();
 
         return $projects;
         return view('project-page', compact('projects'));
