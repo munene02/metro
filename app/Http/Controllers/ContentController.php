@@ -76,7 +76,7 @@ class ContentController extends Controller
 
     public function projectsPage()
     {
-        //$projects = Project::all();
+        $projects = Project::get();
 
         return 'hello';
         return $projects;
