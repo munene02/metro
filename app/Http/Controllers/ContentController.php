@@ -41,9 +41,9 @@ class ContentController extends Controller
 
     public function servicesPage()
     {
-        $cservice = Service::where('title', '=', 'construction')->first();
-        $fservice = Service::where('title', '=', 'furniture')->first();
-        $pservice = Service::where('title', '=', 'plumbing')->first();
+        $cservice = Service::where('title', '=', 'Construction')->first();
+        $fservice = Service::where('title', '=', 'Furniture')->first();
+        $pservice = Service::where('title', '=', 'Plumbing & Electrical')->first();
         //$background = Background::where('page', '=', 'service')->first();
         $cimages = Image::where([['page', '=', 'construction'],['status', '=', 'no']])->get();
         $pimages = Image::where([['page', '=', 'plumbing'],['status', '=', 'no']])->get();
