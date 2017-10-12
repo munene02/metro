@@ -17,7 +17,6 @@
                               <a href="/home"><span>SLIDERS</span></a>
                                      
                           </li>
-
                           <li @php if($page=='about') echo 'class="current-menu-item"'; @endphp >
                               <a href="/about"><span>ABOUT</span></a>
                                      
@@ -26,12 +25,16 @@
                               <a href="/service"><span>SERVICE</span></a>
                                      
                           </li>
+                          <li @php if($page=='project') echo 'class="current-menu-item"'; @endphp >
+                              <a href="/project"><span>PROJECT</span></a>
+                                     
+                          </li>
                           <li>
                             <a href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();"><span>LOGOUT</span></a>
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
-                        </li>
+                          </li>
                       </ul>
                   </nav>
                   <a class="responsive-menu-toggle" href="#"><i class="icon-menu-fine"></i></a>

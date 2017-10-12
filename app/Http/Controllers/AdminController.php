@@ -323,4 +323,26 @@ class AdminController extends Controller
         return redirect('/home');
     }
 
+    public function project()
+    {
+        $projects = Project::orderBy('created_at','desc')->get();
+
+        return view('project', compact('projects'));
+    }
+
+    public function projectId(Request $request)
+    {
+        if($request->id){
+            $project = Project::where('id', '=', $request->id)->first();
+            $images = Image::where('page', '=', $request->id)->get();
+ 
+            //return $images; 
+            return view('projectId', compact('project', 'images'));
+        }
+        else{
+
+            return redirect('/project');
+        }
+    }
+
 }

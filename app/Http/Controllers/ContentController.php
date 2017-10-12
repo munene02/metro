@@ -19,6 +19,7 @@ class ContentController extends Controller
     {
         return view('image');
     }
+
     //show homepage
     public function homePage()
     {
@@ -28,6 +29,7 @@ class ContentController extends Controller
 
     }
 
+    //About Us page
     public function aboutUsPage()
     {
         $text = Text::where('page', '=', 'about')->first();
@@ -37,6 +39,7 @@ class ContentController extends Controller
         return view('about-page', compact('text', 'images'));
     }
 
+    //Services Page
     public function servicesPage()
     {
         $cservice = Service::where('id', '=', '1')->first();
@@ -51,6 +54,7 @@ class ContentController extends Controller
         return view('service-page', compact('cservice','fservice','pservice', 'cimages', 'pimages', 'fimages'));
     }
     
+    //Journal Page
     public function journalPage()
     {
         $journals = Journal::orderBy('created_at','desc')->get();
@@ -72,6 +76,7 @@ class ContentController extends Controller
      
     }
 
+    //Projects Page
     public function projectsPage()
     {
         $projects = Project::orderBy('created_at','desc')->get();
@@ -90,12 +95,12 @@ class ContentController extends Controller
         }
         else{
 
-            return redirect('/project');
+            return redirect('/projects');
         }
      
     }
   
-
+    //Contacts Page
     public function contactPage()
     {
         return 'hello';

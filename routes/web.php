@@ -8,7 +8,7 @@ Route::get('/projects', 'ContentController@projectsPage');
 Route::get('/journal', 'ContentController@journalPage');
 Route::get('/contact', 'ContentController@contactPage');
 Route::get('/journal/{id}', 'ContentController@journalEntry');
-Route::get('/project/{id}', 'ContentController@projectEntry');
+Route::get('/projects/{id}', 'ContentController@projectEntry');
 
 Route::get('/image', 'ContentController@image');
 Route::post('/imageAdd', 'AdminController@imageAdd');
@@ -41,4 +41,7 @@ Route::get('/remove2Image/{id}', 'AdminController@remove2Image');
 Route::post('/save3', 'AdminController@save3');
 Route::post('/new3Image', 'AdminController@new3Image');
 Route::get('/remove3Image/{id}', 'AdminController@remove3Image');
+
+Route::get('/project', 'AdminController@project');
+Route::get('/project/{id}', 'AdminController@projectId');
 

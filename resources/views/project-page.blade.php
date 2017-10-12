@@ -35,7 +35,7 @@
                                     <div class="mcb-wrap-inner">
                                         <div class="column mcb-column column_column clearfix">
                                             <div class="column_attr clearfix" style="background-color:#ffffff;margin-bottom: 50px;">
-                                                <a href="/project/{{$project->id}}" target="_blank" style="text-decoration-line: none;">
+                                                <a href="/projects/{{$project->id}}" target="_blank" style="text-decoration-line: none;">
                                                   <img src="{{ asset($project->cover) }}" alt="{{$project->title}}" />
                                                   <h3 style="padding-left:20px; color: #fff;margin-top:-120px;text-shadow:#000 2px 1px 1px;">
                                                     {{ $project->title }}</h3></a>

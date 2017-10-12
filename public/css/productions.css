@@ -1190,7 +1190,7 @@ a {
 	color: #8ec63f;
 }
 a:hover {
-	color: #b80000;
+	color: #2ac5cc;
 }
 *::-moz-selection {
 	background-color: #8ec63f;
@@ -1256,10 +1256,10 @@ a:hover.mfn-link {
 	color: #8ec63f;
 }
 a.mfn-link-2 span:before, a:hover.mfn-link-4:before, a:hover.mfn-link-4:after, a.hover.mfn-link-4:before, a.hover.mfn-link-4:after, a.mfn-link-5:before, a.mfn-link-7:after, a.mfn-link-7:before {
-	background: #b80000;
+	background: #2ac5cc;
 }
 a.mfn-link-6:before {
-	border-bottom-color: #b80000;
+	border-bottom-color: #2ac5cc;
 }
 .woocommerce a.button, .woocommerce .quantity input.plus, .woocommerce .quantity input.minus {
 	background-color: #f7f7f7 !important;
@@ -1386,7 +1386,7 @@ a.mfn-link-6:before {
 	color: #8ec63f
 }
 #Action_bar .contact_details a:hover {
-	color: #b80000
+	color: #2ac5cc
 }
 #Action_bar .social li a, #Action_bar .social-menu a {
 	color: #bbbbbb
@@ -1428,7 +1428,7 @@ a.mfn-link-6:before {
 	color: #8ec63f;
 }
 #Sliding-top a:hover {
-	color: #b80000;
+	color: #2ac5cc;
 }
 #Sliding-top h1, #Sliding-top h1 a, #Sliding-top h1 a:hover, #Sliding-top h2, #Sliding-top h2 a, #Sliding-top h2 a:hover, #Sliding-top h3, #Sliding-top h3 a, #Sliding-top h3 a:hover, #Sliding-top h4, #Sliding-top h4 a, #Sliding-top h4 a:hover, #Sliding-top h5, #Sliding-top h5 a, #Sliding-top h5 a:hover, #Sliding-top h6, #Sliding-top h6 a, #Sliding-top h6 a:hover {
 	color: #ffffff;
@@ -1583,7 +1583,7 @@ input[type="date"]:focus, input[type="email"]:focus, input[type="number"]:focus,
 		color: #8ec63f
 	}
 	#Action_bar .contact_details a:hover {
-		color: #b80000
+		color: #2ac5cc
 	}
 	#Action_bar .social li a, #Action_bar .social-menu a {
 		color: #bbbbbb
