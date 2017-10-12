@@ -31,7 +31,7 @@
                                   <div class="mcb-wrap-inner">
                                       <div class="column mcb-column one column_column">
                                         <div class="column_attr clearfix" style="padding:0 10% 0 0">
-                                        <h6>Upload a Slider image below;</h6>  
+                                        <h6>Upload a Slider image.(HINT:1440px X 900px)</h6>  
                                   <form enctype="multipart/form-data" method="POST" action="/newSliders">
                                       {!! csrf_field() !!}
                                       @if(count($errors) > 0)
@@ -86,19 +86,28 @@
                               <div class="wrap mcb-wrap one  valign-top clearfix" style="margin-top:-25px">
                                   <div class="mcb-wrap-inner">
                                     @foreach($slides as $slide)
-                                      <div class="column mcb-column one column_column">
+                                      <div class="column mcb-column one-third column_column">
                                           <div class="column_attr clearfix" style=" padding:0 15% 0 0;">
-                                              <img src="{{ asset($slide->image) }}" alt="" width="200" height="125" style="padding-right:20px; " />
-                                              <p style="display: inline-block;vertical-align:top;" ><big>{{$loop->iteration}}. {{ $slide->title }}
-                                              </big><br/>{{ $slide->caption }} <br/><br/>
-                                               <input type="button" class="btn-edit" value="EDIT" onclick="location.href = '/editSlider';">
-                                               <input type="button" class="btn-remove" value="REMOVE" onclick="location.href = '/removeSlider';">
-                                               <input type="button" class="btn-change" value="CHANGE IMAGE" onclick="location.href = '/changeImage';">
-                                             </p>
-                                               
-                                              
+
+                                                 <form method="post" action="/saveSlider" style="display: inline-block;vertical-align:top;padding-right: 20px;"> {!! csrf_field() !!}
+                                                        Slide Title<input type="text" name="title" value="{{ $slide->caption }}">
+
+                                                        Slide Caption
+                                                        <input type="text" name="caption" value="{{ $slide->caption }}">
+                                                
+                                                        <input type="hidden" name="id" value="{{$slide->id}}">  
+                                                       <button type="submit" class="btn-edit">SAVE</button> 
+                                                 
+                                                 </form>
+                                                 <p style="display: inline-block;vertical-align:top;">
+                                                 <img src="{{ asset($slide->image) }}" alt="" width="200" height="125" style="padding-right:20px;" /><br>
+                                                 <input type="button" class="btn-remove" value="DELETE IMAGE" onclick="location.href = '/removeSlider/{{$slide->id}}';">
+                                                 </p>
+                                                 
+
                                           </div>
                                       </div>
+                                      
                                     @endforeach  
                                   </div>         
                           </div>

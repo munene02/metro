@@ -50,7 +50,7 @@
                                                         @foreach($images as $image)
                                                           <li data-transition="fade" style="text-shadow:#000 1px 2px 2px;">
                                                               <img src="{{ asset($image->image) }}" alt="" width="600" height="375">
-                                                              <div class="tp-caption tp-resizeme rs-parallaxlevel-0" data-x="left" data-hoffset="100" data-y="top" data-voffset="650" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="o:0" data-transform_out="o:0" data-start="500" style="font-size:60px;line-height:55px; color:#fff">{{ $image->caption}}
+                                                              <div class="tp-caption tp-resizeme rs-parallaxlevel-0" data-x="left" data-hoffset="100" data-y="top" data-voffset="650" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="o:0" data-transform_out="o:0" data-start="500" style="font-size:60px;line-height:55px; color:#fff">
                                                               </div>
                                                           </li>
                                                           @endforeach

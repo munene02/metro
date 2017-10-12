@@ -1,39 +1,4 @@
-/*
-|-------------------------------------------------------------------------
-| Be
-| Global style
-| version 4.2
-| http://BeantownThemes.com
-| http://themeforest.net/user/BeantownThemes
-|--------------------------------------------------------------------------
-| 1.0 Base
-| 2.0 Buttons
-| 3.0 Mfn-icons
-| 4.0 Shortcodes
-| 5.0 Variables
-| 6.0 Animation
-| 7.0 jQuery ui
-| 8.0 jPlayer
-| 9.0 Prrettyphoto
-| 10. simple style
-| 11. Bootstrap elements
-|
-*/
 
-
-/*
-|--------------------------------------------------------------------------
-|  1.0 Base
-|  
-|--------------------------------------------------------------------------
-|
-| 
-|
-*/
-
-
-/* #Reset & Basics (Inspired by E. Meyers)
-================================================== */
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, tt, var, b, u, i, center, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;

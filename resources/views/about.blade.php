@@ -58,7 +58,7 @@
                                   <div class="mcb-wrap-inner">
                                       <div class="column mcb-column one column_column">
                                         <div class="column_attr clearfix" style="padding:0 10% 0 0">
-                                        <h6>Upload a About Us image below;</h6>  
+                                        <h6>Upload a About Us image.(HINT:600px X 375px)</h6>  
                                   <form enctype="multipart/form-data" method="POST" action="/newAboutImage">
                                       {!! csrf_field() !!}
                                       @if(count($errors) > 0)
@@ -79,8 +79,7 @@
                                       </div>
 
                                       <div class="form-group">
-                                        <label for="caption">Image Caption:</label>
-                                        <input type="text" cols="100" name="caption" id="caption" class="form-control" style="width: 600px;" value="{{ old('caption') }}" required>
+                                        <input type="hidden"  name="caption" value="About">
                                       </div>
                                       <div class="col-md-12">
                                         <div class="form-group">

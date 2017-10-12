@@ -64,7 +64,7 @@
                                   <div class="mcb-wrap-inner">
                                       <div class="column mcb-column one column_column">
                                         <div class="column_attr clearfix" style="padding:0 10% 0 0">
-                                        <h6>Upload a {{$cservice['title']}} image below;</h6>  
+                                        <h6>Upload a {{$cservice['title']}} image.(HINT:600px X 375px)</h6>  
                                   <form enctype="multipart/form-data" method="POST" action="/new1Image">
                                       {!! csrf_field() !!}
                                       @if(count($errors) > 0)
@@ -127,7 +127,7 @@
                                   </div>         
                               </div>
                   </div>
-                  <hr style="margin-bottom:50px;color: #2acc2a;border-style: solid;border-width: 1px;">
+                  <hr style="margin-bottom:50px;color: #2ac5cc;border-style: solid;border-width: 1px;">
 
                   <div class="section_wrapper mcb-section-inner">
                               <div class="wrap mcb-wrap one valign-top clearfix">
@@ -175,7 +175,7 @@
                                   <div class="mcb-wrap-inner">
                                       <div class="column mcb-column one column_column">
                                         <div class="column_attr clearfix" style="padding:0 10% 0 0">
-                                        <h6>Upload a {{$pservice['title']}} image below;</h6>  
+                                        <h6>Upload a {{$pservice['title']}} image.(HINT:600px X 375px)</h6>  
                                   <form enctype="multipart/form-data" method="POST" action="/new2Image">
                                       {!! csrf_field() !!}
                                       @if(count($errors) > 0)
@@ -240,7 +240,7 @@
                               </div>
                   </div>
 
-                  <hr style="margin-bottom:50px;color: #2acc2a;border-style: solid;border-width: 1px;">
+                  <hr style="margin-bottom:50px;color: #3f3f3f;border-style: solid;border-width: 1px;">
 
                   <div class="section_wrapper mcb-section-inner">
                               <div class="wrap mcb-wrap one valign-top clearfix">
@@ -288,7 +288,7 @@
                                   <div class="mcb-wrap-inner">
                                       <div class="column mcb-column one column_column">
                                         <div class="column_attr clearfix" style="padding:0 10% 0 0">
-                                        <h6>Upload a {{$fservice['title']}} image below;</h6>  
+                                        <h6>Upload a {{$fservice['title']}} image.(HINT:600px X 375px)</h6>  
                                   <form enctype="multipart/form-data" method="POST" action="/new3Image">
                                       {!! csrf_field() !!}
                                       @if(count($errors) > 0)

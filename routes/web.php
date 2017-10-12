@@ -21,6 +21,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('newSliders', 'AdminController@newSlider');
+Route::post('/saveSlider', 'AdminController@saveSlider');
+Route::get('/removeSlider/{id}', 'AdminController@removeSlider');
 
 Route::get('/about', 'AdminController@about');
 Route::post('/saveAbout', 'AdminController@saveAbout');

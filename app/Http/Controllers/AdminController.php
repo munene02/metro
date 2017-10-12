@@ -9,6 +9,7 @@ use App\Image;
 use App\Service;
 use App\Journal;
 use App\Project;
+
 use Carbon\Carbon;
 
 use Illuminate\Support\Facades\Storage;
@@ -34,7 +35,7 @@ class AdminController extends Controller
 		$slider->status = 'no';
 		$slider->save();
 
-		alert()->success('Slider Added', 'The Slider was successfully added.');
+		alert()->success('Slider Added', 'The Slider has been successfully added.');
      
         return redirect('/home');
 		
@@ -55,7 +56,7 @@ class AdminController extends Controller
         $url = Storage::url($name);
 
 
-        alert()->success($name.' Added', 'The Image was successfully added.');
+        alert()->success($name.' Added', 'The Image has been successfully added.');
      
         return redirect('/image');
         
@@ -84,7 +85,7 @@ class AdminController extends Controller
 
         Text::where('page', 'about')->update(['text' => $request->text]); 
 
-        alert()->success('Edit Successful', 'ABOUT US was been changed');
+        alert()->success('Edit Successful', 'ABOUT US has been changed');
 
         return redirect('/about');
     }
@@ -107,7 +108,7 @@ class AdminController extends Controller
         $image->status = 'no';
         $image->save();
 
-        alert()->success('Image Added', 'About Us Image was successfully ADDED.');
+        alert()->success('Image Added', 'About Us Image has been successfully ADDED.');
      
         return redirect('/about');
     }
@@ -116,7 +117,7 @@ class AdminController extends Controller
     {
         
         Image::where('id', $request->id)->update(['status' => 'yes']); 
-        alert()->success('Image Removed', 'About Us Image was successfully REMOVED.');
+        alert()->success('Image Removed', 'About Us Image has been successfully REMOVED.');
      
         return redirect('/about');
     }
@@ -150,7 +151,7 @@ class AdminController extends Controller
         Service::where('id', '1')->update(['description' => $request->description]);
         Service::where('id', '1')->update(['title' => $request->title]); 
 
-        alert()->success($request->title.' SAVED', 'Text was been successfully changed.');
+        alert()->success($request->title.' SAVED', 'Text has been successfully changed.');
 
         return redirect('/service');
     }
@@ -174,7 +175,7 @@ class AdminController extends Controller
         $image->status = 'no';
         $image->save();
 
-        alert()->success($request->caption.' Image Added','Image was successfully ADDED.');
+        alert()->success($request->caption.' Image Added','Image has been successfully ADDED.');
      
         return redirect('/service');
     }
@@ -183,7 +184,7 @@ class AdminController extends Controller
     {
         
         Image::where('id', $request->id)->update(['status' => 'yes']); 
-        alert()->success('Image Removed', 'Image was successfully REMOVED.');
+        alert()->success('Image Removed', 'Image has been successfully REMOVED.');
      
         return redirect('/service');
     }
@@ -203,7 +204,7 @@ class AdminController extends Controller
         Service::where('id', '2')->update(['description' => $request->description]);
         Service::where('id', '2')->update(['title' => $request->title]); 
 
-        alert()->success($request->title.' SAVED', 'Text was been successfully changed.');
+        alert()->success($request->title.' SAVED', 'Text has been successfully changed.');
 
         return redirect('/service');
     }
@@ -227,7 +228,7 @@ class AdminController extends Controller
         $image->status = 'no';
         $image->save();
 
-        alert()->success($request->caption.' Image Added', 'Image was successfully ADDED.');
+        alert()->success($request->caption.' Image Added', 'Image has been successfully ADDED.');
      
         return redirect('/service');
     }
@@ -236,7 +237,7 @@ class AdminController extends Controller
     {
         
         Image::where('id', $request->id)->update(['status' => 'yes']); 
-        alert()->success('Image Removed', 'Image was successfully REMOVED.');
+        alert()->success('Image Removed', 'Image has been successfully REMOVED.');
      
         return redirect('/service');
     }
@@ -256,7 +257,7 @@ class AdminController extends Controller
         Service::where('id', '3')->update(['description' => $request->description]);
         Service::where('id', '3')->update(['title' => $request->title]); 
 
-        alert()->success($request->title.' SAVED', 'Text was been successfully changed.');
+        alert()->success($request->title.' SAVED', 'Text has been successfully changed.');
 
         return redirect('/service');
     }
@@ -280,7 +281,7 @@ class AdminController extends Controller
         $image->status = 'no';
         $image->save();
 
-        alert()->success($request->caption.' Image Added', 'Image was successfully ADDED.');
+        alert()->success($request->caption.' Image Added', 'Image has been successfully ADDED.');
      
         return redirect('/service');
     }
@@ -289,8 +290,37 @@ class AdminController extends Controller
     {
         
         Image::where('id', $request->id)->update(['status' => 'yes']); 
-        alert()->success('Image Removed', 'Image was successfully REMOVED.');
+        alert()->success('Image Removed', 'Image has been successfully REMOVED.');
      
         return redirect('/service');
     }
+
+    //sliders
+    public function saveSlider(Request $request)
+    {
+        $this->validate($request, [
+            'caption' => 'required',
+            'title' => 'required',
+        ],
+        [
+            'description.required' => 'Caption field is empty', 
+            'title.required' => 'Title field is empty',    
+        ]);
+
+        Slider::where('id', $request->id)->update(['caption' => $request->caption]);
+        Slider::where('id', $request->id)->update(['title' => $request->title]); 
+
+        alert()->success('Slider Text SAVED', 'Slider Text has been successfully changed.');
+
+        return redirect('/home');
+    }
+
+    public function RemoveSlider(Request $request)
+    {
+        Slider::where('id', $request->id)->update(['status' => 'yes']); 
+        alert()->success('Slider Image Removed', 'Image has been successfully REMOVED.');
+     
+        return redirect('/home');
+    }
+
 }
