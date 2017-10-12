@@ -34,8 +34,8 @@
                                         <div class="column mcb-column one column_column" style="background-color: #fff;">
                                             <div class="column_attr clearfix">
                                                 
-                                                <p style="text-align: justify;padding: 39px;line-height: 19px;color: #333;">
-                                                {!! $text['text'] !!}</p>
+                                                <div style="text-align: justify;padding: 39px;line-height: 19px;color: #333;">
+                                                {!! $text['text'] !!}</div>
                                             </div>
                                         </div>
                                     </div>

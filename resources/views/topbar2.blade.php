@@ -13,10 +13,17 @@
               <div class="menu_wrapper">
                   <nav id="menu" class="menu-main-menu-container">
                       <ul id="menu-main-menu" class="menu">
-
-
-                          <li class="current-menu-item">
+                          <li @php if($page=='home') echo 'class="current-menu-item"'; @endphp >
                               <a href="/home"><span>SLIDERS</span></a>
+                                     
+                          </li>
+
+                          <li @php if($page=='about') echo 'class="current-menu-item"'; @endphp >
+                              <a href="/about"><span>ABOUT</span></a>
+                                     
+                          </li>
+                          <li @php if($page=='service') echo 'class="current-menu-item"'; @endphp >
+                              <a href="/service"><span>SERVICE</span></a>
                                      
                           </li>
                           <li>

@@ -8,7 +8,6 @@ use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use App\Slider;
 use App\Text;
-use App\Background;
 use App\Image;
 use App\Service;
 use App\Journal;
@@ -32,7 +31,6 @@ class ContentController extends Controller
     public function aboutUsPage()
     {
         $text = Text::where('page', '=', 'about')->first();
-        //$background = Background::where('page', '=', 'about')->first();
         $images = Image::where([['page', '=', 'about'],['status', '=', 'no']])->get();
 
         //return $text;
@@ -41,18 +39,18 @@ class ContentController extends Controller
 
     public function servicesPage()
     {
-        $cservice = Service::where('title', '=', 'Construction')->first();
-        $fservice = Service::where('title', '=', 'Furniture')->first();
-        $pservice = Service::where('title', '=', 'Plumbing & Electrical')->first();
+        $cservice = Service::where('id', '=', '1')->first();
+        $pservice = Service::where('id', '=', '2')->first();
+        $fservice = Service::where('id', '=', '3')->first();
         //$background = Background::where('page', '=', 'service')->first();
-        $cimages = Image::where([['page', '=', 'construction'],['status', '=', 'no']])->get();
-        $pimages = Image::where([['page', '=', 'plumbing'],['status', '=', 'no']])->get();
-        $fimages = Image::where([['page', '=', 'furniture'],['status', '=', 'no']])->get();
+        $cimages = Image::where([['page', '=', '1'],['status', '=', 'no']])->get();
+        $pimages = Image::where([['page', '=', '2'],['status', '=', 'no']])->get();
+        $fimages = Image::where([['page', '=', '3'],['status', '=', 'no']])->get();
 
         //return $pimages;
         return view('service-page', compact('cservice','fservice','pservice', 'cimages', 'pimages', 'fimages'));
     }
-
+    
     public function journalPage()
     {
         $journals = Journal::orderBy('created_at','desc')->get();

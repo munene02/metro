@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="{{ asset("/css/global.css") }}">
   <link rel="stylesheet" href="{{ asset("/css/structure.css") }}">
   <link rel="stylesheet" href="{{ asset("/css/productions.css") }}">
+  <link rel="stylesheet" href="{{ asset("/css/summernote.css") }}">
   <link rel="stylesheet" href="{{ asset("/css/custom.css") }}">
 
   <link rel="stylesheet" href="{{ asset("/css/dropzone/dropzone.min.css") }}">
@@ -39,12 +40,24 @@
     <script src="{{ asset("/js/jquery.plugins.js") }}"></script>
     <script src="{{ asset("/js/animations/animations.js") }}"></script>
     <script src="{{ asset("/js/translate3d.js") }}"></script>
+    <script src="{{ asset("/js/summernote.js") }}"></script>
+    <script src="{{ asset("/js/tinymce/tinymce.min.js") }}"></script>
     <script src="{{ asset("/js/scripts.js") }}"></script>
     <script src="{{ asset("/css/dropzone/dropzone.min.js") }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.js"></script>
     @include('Alerts::alerts')
     @include('script')
-    
+    <script>
+      tinymce.init({
+  selector: 'textarea',
+  height: 250,
+  menubar: false,
+  content_css: [
+    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+    '//www.tinymce.com/css/codepen.min.css']
+});
+    </script>
+
     <script id="mfn-dnmc-retina-js">
     jQuery(window).load(function() {
       var retina = window.devicePixelRatio > 1 ? true : false;

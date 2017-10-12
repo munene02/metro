@@ -36,9 +36,9 @@
                                     <div class="column mcb-column one-third column_column" style="padding-bottom:20px;">
                                         <div class="column_attr clearfix" style="background-color:#ffffff; ">
                                             <h3 style="padding: 20px 20px 0px 20px; color: #02bbca;"">{{ $cservice['title'] }}</h3>
-                                            <p style="text-align: justify;padding: 0px 20px 5px 20px;line-height: 19px;color: #333;">
+                                            <div style="text-align: justify;padding: 0px 20px 5px 20px;line-height: 19px;color: #333;">
                                                 {!! $cservice['description'] !!}
-                                            </p>
+                                            </div>
 
                                                 <div class="rev_slider_wrapper">
                                                   <div id="construction" class="rev_slider" data-version="5.0">
@@ -59,9 +59,9 @@
                                     <div class="column mcb-column one-third column_column" style="padding-bottom:20px;">
                                         <div class="column_attr clearfix" style="background-color:#ffffff; ">
                                             <h3 style="padding: 20px 20px 0px 20px; color: #02bbca;"">{{ $pservice['title'] }}</h3>
-                                            <p style="text-align: justify;padding: 0px 20px 5px 20px;line-height: 19px;color: #333;">
+                                            <div style="text-align: justify;padding: 0px 20px 20px 20px;line-height: 19px;color: #333;">
                                                 {!! $pservice['description'] !!}
-                                            </p>
+                                            </div>
 
                                                 <div class="rev_slider_wrapper">
                                                   <div id="plumbing" class="rev_slider" data-version="5.0">
@@ -82,9 +82,9 @@
                                     <div class="column mcb-column one-third column_column" style="padding-bottom:20px;">
                                         <div class="column_attr clearfix" style="background-color:#ffffff; ">
                                             <h3 style="padding: 20px 20px 0px 20px; color: #02bbca;"">{{ $fservice['title'] }}</h3>
-                                            <p style="text-align: justify;padding: 0px 20px 5px 20px;line-height: 19px;color: #333;">
+                                            <div style="text-align: justify;padding: 0px 20px 20px 20px;line-height: 19px;color: #333;">
                                                 {!! $fservice['description'] !!}
-                                            </p>
+                                            </div>
 
                                                 <div class="rev_slider_wrapper">
                                                   <div id="furniture" class="rev_slider" data-version="5.0">
