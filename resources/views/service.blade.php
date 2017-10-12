@@ -84,7 +84,7 @@
                                         <br/><br/>
                                       </div>
                                       <div class="form-group">
-                                        <input type="hidden" name="caption" >
+                                        <input type="hidden" name="caption" value="{{$cservice['title']}}">
                                       </div>
                                       <div class="col-md-12">
                                         <div class="form-group">
@@ -195,7 +195,7 @@
                                         <br/><br/>
                                       </div>
                                       <div class="form-group">
-                                        <input type="hidden" name="caption" >
+                                        <input type="hidden" name="caption" value="{{$pservice['title']}}">
                                       </div>
                                       <div class="col-md-12">
                                         <div class="form-group">
@@ -308,7 +308,7 @@
                                         <br/><br/>
                                       </div>
                                       <div class="form-group">
-                                        <input type="hidden" name="caption" >
+                                        <input type="hidden" name="caption" value="{{$fservice['title']}}">
                                       </div>
                                       <div class="col-md-12">
                                         <div class="form-group">

@@ -135,6 +135,7 @@ class AdminController extends Controller
         return view('service', compact('cservice','fservice','pservice', 'cimages', 'pimages', 'fimages'));
     }
 
+    // 1
     public function save1(Request $request)
     {
         $this->validate($request, [
@@ -149,7 +150,7 @@ class AdminController extends Controller
         Service::where('id', '1')->update(['description' => $request->description]);
         Service::where('id', '1')->update(['title' => $request->title]); 
 
-        alert()->success($request->title.' SAVED', $request->title.' was been successfully changed.');
+        alert()->success($request->title.' SAVED', 'Text was been successfully changed.');
 
         return redirect('/service');
     }
@@ -173,7 +174,7 @@ class AdminController extends Controller
         $image->status = 'no';
         $image->save();
 
-        alert()->success($request->caption.' Added', $request->caption.'Image was successfully ADDED.');
+        alert()->success($request->caption.' Image Added','Image was successfully ADDED.');
      
         return redirect('/service');
     }
@@ -182,7 +183,113 @@ class AdminController extends Controller
     {
         
         Image::where('id', $request->id)->update(['status' => 'yes']); 
-        alert()->success('Image Removed', 'Service Image was successfully REMOVED.');
+        alert()->success('Image Removed', 'Image was successfully REMOVED.');
+     
+        return redirect('/service');
+    }
+
+    // 2
+    public function save2(Request $request)
+    {
+        $this->validate($request, [
+            'description' => 'required',
+            'title' => 'required',
+        ],
+        [
+            'description.required' => 'Description field is empty', 
+            'title.required' => 'Title field is empty',    
+        ]);
+
+        Service::where('id', '2')->update(['description' => $request->description]);
+        Service::where('id', '2')->update(['title' => $request->title]); 
+
+        alert()->success($request->title.' SAVED', 'Text was been successfully changed.');
+
+        return redirect('/service');
+    }
+
+    public function new2Image(Request $request)
+    {
+        $request->file('image');
+
+        $extension = $request->file('image')->extension();
+
+        $time = Carbon::now()->timestamp;
+        $name = $time.'.'.$extension;
+
+        $request->image->storeAs('public', $name);
+        $url = Storage::url($name);
+
+        $image = new Image;
+        $image->image = $url;
+        $image->page = '2';
+        $image->caption = $request->caption;
+        $image->status = 'no';
+        $image->save();
+
+        alert()->success($request->caption.' Image Added', 'Image was successfully ADDED.');
+     
+        return redirect('/service');
+    }
+
+    public function remove2Image(Request $request)
+    {
+        
+        Image::where('id', $request->id)->update(['status' => 'yes']); 
+        alert()->success('Image Removed', 'Image was successfully REMOVED.');
+     
+        return redirect('/service');
+    }
+
+    //3
+    public function save3(Request $request)
+    {
+        $this->validate($request, [
+            'description' => 'required',
+            'title' => 'required',
+        ],
+        [
+            'description.required' => 'Description field is empty', 
+            'title.required' => 'Title field is empty',    
+        ]);
+
+        Service::where('id', '3')->update(['description' => $request->description]);
+        Service::where('id', '3')->update(['title' => $request->title]); 
+
+        alert()->success($request->title.' SAVED', 'Text was been successfully changed.');
+
+        return redirect('/service');
+    }
+
+    public function new3Image(Request $request)
+    {
+        $request->file('image');
+
+        $extension = $request->file('image')->extension();
+
+        $time = Carbon::now()->timestamp;
+        $name = $time.'.'.$extension;
+
+        $request->image->storeAs('public', $name);
+        $url = Storage::url($name);
+
+        $image = new Image;
+        $image->image = $url;
+        $image->page = '3';
+        $image->caption = $request->caption;
+        $image->status = 'no';
+        $image->save();
+
+        alert()->success($request->caption.' Image Added', 'Image was successfully ADDED.');
+     
+        return redirect('/service');
+    }
+
+    public function remove3Image(Request $request)
+    {
+        
+        Image::where('id', $request->id)->update(['status' => 'yes']); 
+        alert()->success('Image Removed', 'Image was successfully REMOVED.');
      
         return redirect('/service');
     }
