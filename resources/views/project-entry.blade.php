@@ -39,9 +39,9 @@
                                             <div class="rev_slider_wrapper">
                                                   <div id="rev_slider" class="rev_slider" data-version="5.0">
                                                       <ul style="list-style: none;padding-top: 20px;">
-                                                        @foreach($images as $image)
+                                                        @foreach($photos as $photo)
                                                           <li data-transition="fade" style="text-shadow:#000 1px 2px 2px;">
-                                                              <img src="{{ asset($image->image) }}" alt="{{ $project['title'] }}" width="600" height="375" >
+                                                              <img src="{{ asset($photo->photo) }}" alt="{{ $project['title'] }}" width="600" height="375" >
                                                           </li>
                                                           @endforeach
                                                       </ul>
@@ -54,12 +54,12 @@
                                         <div class="column_attr clearfix">
                                             <h3 style="padding: 5px 20px 0px 40px; color: #02bbca;">{{$project['title']}}<br></h3>
 
-                                            <p style="text-align: justify;padding: 0px 40px 0px 40px;line-height: 19px;color: #333;">
+                                            <div style="text-align: justify;padding: 0px 40px 0px 40px;line-height: 19px;color: #000;">
 
                                                 {!! $project['details'] !!}
                                                 <br>
                                                 
-                                            </p>
+                                            </div>
 
                                         </div>
                                     </div>

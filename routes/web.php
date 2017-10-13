@@ -1,7 +1,6 @@
 <?php
 
 Route::get('/', 'ContentController@homePage');
-
 Route::get('/aboutUs', 'ContentController@aboutUsPage');
 Route::get('/services', 'ContentController@servicesPage');
 Route::get('/projects', 'ContentController@projectsPage');
@@ -14,34 +13,46 @@ Route::get('/image', 'ContentController@image');
 Route::post('/imageAdd', 'AdminController@imageAdd');
 
 Route::get('/login', function () { 
-    return view('login');
+    return view('auth.login');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::post('newSliders', 'AdminController@newSlider');
-Route::post('/saveSlider', 'AdminController@saveSlider');
-Route::get('/removeSlider/{id}', 'AdminController@removeSlider');
+Route::get('/home', 'HomeController@index')->middleware('admin');
+Route::post('newSliders', 'AdminController@newSlider')->middleware('admin');
+Route::post('/saveSlider', 'AdminController@saveSlider')->middleware('admin');
+Route::get('/removeSlider/{id}', 'AdminController@removeSlider')->middleware('admin');
 
-Route::get('/about', 'AdminController@about');
-Route::post('/saveAbout', 'AdminController@saveAbout');
-Route::post('/newAboutImage', 'AdminController@newAboutImage');
-Route::get('/removeAboutImage/{id}', 'AdminController@removeAboutImage');
+Route::get('/about', 'AdminController@about')->middleware('admin');
+Route::post('/saveAbout', 'AdminController@saveAbout')->middleware('admin');
+Route::post('/newAboutImage', 'AdminController@newAboutImage')->middleware('admin');
+Route::get('/removeAboutImage/{id}', 'AdminController@removeAboutImage')->middleware('admin');
 
-Route::get('/service', 'AdminController@service');
-Route::post('/save1', 'AdminController@save1');
-Route::post('/new1Image', 'AdminController@new1Image');
-Route::get('/remove1Image/{id}', 'AdminController@remove1Image');
+Route::get('/service', 'AdminController@service')->middleware('admin');
+Route::post('/save1', 'AdminController@save1')->middleware('admin');
+Route::post('/new1Image', 'AdminController@new1Image')->middleware('admin');
+Route::get('/remove1Image/{id}', 'AdminController@remove1Image')->middleware('admin');
 
-Route::post('/save2', 'AdminController@save2');
-Route::post('/new2Image', 'AdminController@new2Image');
-Route::get('/remove2Image/{id}', 'AdminController@remove2Image');
+Route::post('/save2', 'AdminController@save2')->middleware('admin');
+Route::post('/new2Image', 'AdminController@new2Image')->middleware('admin');
+Route::get('/remove2Image/{id}', 'AdminController@remove2Image')->middleware('admin');
 
-Route::post('/save3', 'AdminController@save3');
-Route::post('/new3Image', 'AdminController@new3Image');
-Route::get('/remove3Image/{id}', 'AdminController@remove3Image');
+Route::post('/save3', 'AdminController@save3')->middleware('admin');
+Route::post('/new3Image', 'AdminController@new3Image')->middleware('admin');
+Route::get('/remove3Image/{id}', 'AdminController@remove3Image')->middleware('admin');
 
-Route::get('/project', 'AdminController@project');
-Route::get('/project/{id}', 'AdminController@projectId');
+Route::get('/project', 'AdminController@project')->middleware('admin'); 
+Route::get('/newProject', function () { return view('newProject');})->middleware('admin');
+Route::get('/editProject/{id}', 'AdminController@editProject')->middleware('admin'); 
+Route::get('/addPhoto/{id}', 'AdminController@addPhoto')->middleware('admin'); 
+Route::get('/changeCover/{id}', 'AdminController@changeCover')->middleware('admin');
+Route::get('/removePhoto/{id}', 'AdminController@removePhoto')->middleware('admin'); 
+Route::get('/removeProject/{id}', 'AdminController@removeProject')->middleware('admin'); 
+
+Route::post('/addProject', 'AdminController@addProject')->middleware('admin'); 
+Route::post('/saveProject', 'AdminController@saveProject')->middleware('admin'); 
+Route::post('/savePhoto', 'AdminController@savePhoto')->middleware('admin'); 
+Route::post('/saveCover', 'AdminController@saveCover')->middleware('admin');
+
+
 

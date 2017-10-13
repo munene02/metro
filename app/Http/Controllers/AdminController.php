@@ -9,7 +9,7 @@ use App\Image;
 use App\Service;
 use App\Journal;
 use App\Project;
-
+use App\Photo;
 use Carbon\Carbon;
 
 use Illuminate\Support\Facades\Storage;
@@ -44,8 +44,6 @@ class AdminController extends Controller
     public function imageAdd(Request $request)
     {
 
-
-
         $request->file('slider');
         $extension = $request->file('slider')->extension();
 
@@ -58,8 +56,7 @@ class AdminController extends Controller
 
         alert()->success($name.' Added', 'The Image has been successfully added.');
      
-        return redirect('/image');
-        
+        return redirect('/image');  
 
     }
 
@@ -315,7 +312,7 @@ class AdminController extends Controller
         return redirect('/home');
     }
 
-    public function RemoveSlider(Request $request)
+    public function removeSlider(Request $request)
     {
         Slider::where('id', $request->id)->update(['status' => 'yes']); 
         alert()->success('Slider Image Removed', 'Image has been successfully REMOVED.');
@@ -323,26 +320,127 @@ class AdminController extends Controller
         return redirect('/home');
     }
 
+    //Project
     public function project()
     {
-        $projects = Project::orderBy('created_at','desc')->get();
+        $projects = Project::where('status','no')->orderBy('created_at','desc')->get();
 
         return view('project', compact('projects'));
     }
 
-    public function projectId(Request $request)
+    public function editProject(Request $request)
     {
         if($request->id){
             $project = Project::where('id', '=', $request->id)->first();
-            $images = Image::where('page', '=', $request->id)->get();
- 
-            //return $images; 
-            return view('projectId', compact('project', 'images'));
+            $photos = Photo::where([['project_id', '=', $request->id],['status', '=', 'no']])->get();
+
+            return view('projectId', compact('project', 'photos'));
         }
         else{
 
             return redirect('/project');
         }
+    }
+
+    public function saveProject(Request $request)
+    {
+        Project::where('id', $request->id)->update(['title' => $request->title]);
+        Project::where('id', $request->id)->update(['details' => $request->details]);
+
+        alert()->success('Project Details SAVED', 'The project has been successfully changed.');
+
+        return redirect('/editProject/'.$request->id);
+    }
+
+    public function removePhoto(Request $request)
+    {
+        Photo::where('id', $request->id)->update(['status' => 'yes']); 
+        alert()->success('Project Photo Removed', 'Image has been successfully REMOVED.');
+     
+        return redirect('/project');
+    }
+
+    public function addPhoto(Request $request)
+    {
+        $project = Project::where('id', '=', $request->id)->first();
+        return view('addPhoto', compact('project'));
+    }
+
+    public function savePhoto(Request $request)
+    {
+       $request->file('photo');
+        $extension = $request->file('photo')->extension();
+
+        $time = Carbon::now()->timestamp;
+        $name = $time.'.'.$extension;
+
+        $request->photo->storeAs('public', $name);
+        $url = Storage::url($name);
+
+        $photo = new Photo;
+        $photo->project_id = $request->id;
+        $photo->photo = $url;
+        $photo->status = 'no';
+        $photo->save();
+
+        alert()->success('Project Photo Added', 'The Photo has been successfully added.');
+     
+        return redirect('/project'); 
+    }
+
+    public function changeCover(Request $request)
+    {
+        $project = Project::where('id', '=', $request->id)->first();
+        return view('changeCover', compact('project'));
+    }
+
+    public function saveCover(Request $request)
+    {
+       $request->file('photo');
+        $extension = $request->file('photo')->extension();
+
+        $time = Carbon::now()->timestamp;
+        $name = $time.'.'.$extension;
+
+        $request->photo->storeAs('public', $name);
+        $url = Storage::url($name);
+
+        Project::where('id', $request->id)->update(['cover' => $url]);
+
+        alert()->success('Project Cover Changed', 'The Project Cover has been successfully changed.');
+     
+        return redirect('/project'); 
+    }
+
+    public function addProject(Request $request)
+    {
+        $request->file('cover');
+        $extension = $request->file('cover')->extension();
+
+        $time = Carbon::now()->timestamp;
+        $name = $time.'.'.$extension;
+
+        $request->cover->storeAs('public', $name);
+        $url = Storage::url($name);
+
+        $project = new Project;
+        $project->title = $request->title;
+        $project->details = $request->details;
+        $project->cover = $url;
+        $project->status = 'no';
+        $project->save();
+
+        alert()->success('New Project Added', 'The New Project has been successfully changed.');
+     
+        return redirect('/project');
+    }
+
+    public function removeProject(Request $request)
+    {
+        Project::where('id', $request->id)->update(['status' => 'yes']); 
+        alert()->success('Project Removed', 'The Project has been successfully REMOVED.');
+     
+        return redirect('/project');
     }
 
 }

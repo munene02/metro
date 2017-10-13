@@ -29,21 +29,49 @@
                                     <div class="mcb-wrap-inner">
                                         <div class="column mcb-column one column_column">
                                             <div class="column_attr clearfix" style=" padding:0 15% 0 0;">
-                                                <input type="button" class="btn-add" value="ADD A PROJECT" onclick="location.href = '/addProject';">
-                                                <p>
-                                                    Select a Project below;
-                                                </p>
-                                                <ul>
-                                                    @foreach($projects as $project)
-                                                        <li>
-                                                            <a href="/project/{{$project->id}}">{{$loop->iteration}}. {{$project->title}}</a>
-                                                        </li>
-                                                    @endforeach
-                                                </ul> 
+                                                <form method="POST" action="/saveProject"> {!! csrf_field() !!}
+                                                    @if(count($errors) > 0)
+                                                        <ul style="color:#ff1e1e;">
+                                                            @foreach($errors->all() as $error)
+                                                                <li>{{ $error }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+                                                    <p>Edit the project details below:</p>
+                                                    <div class="form-group">
+                                                        <label for="title">Project Title:</label>
+                                                        <input type="text" cols="100" name="title" id="title" class="form-control" style="width: 600px;" value="{{$project['title']}}" required>
+                                                    </div>
+                                                    
+                                                    <div class="form-group">
+                                                        <label for="details">Project Details:</label>
+                                                        <textarea name="details" class="form-control" required>
+                                                            {!! $project['details'] !!}
+                                                        </textarea>
+                                                    </div>
+                                                    <input type="hidden" name="id" value="{{$project['id']}}">
+                                                    <input type="submit" class="btn-edit" value="SAVE PROJECT">
+                                                </form>                                               
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="wrap mcb-wrap one  valign-top clearfix" style="margin-top:-25px">
+                                    <div class="mcb-wrap-inner">
+                                        <h3>Current Project Photos</h3>
+                                    @foreach($photos as $photo)
+                                        <div class="column mcb-column one-fourth column_column">
+                                            <div class="column_attr clearfix" style=" padding:0 15% 0 0;">
+                                                <img src="{{ asset($photo->photo) }}" alt="" width="200" height="125" style="padding-right:20px; " />
+                                                <p>
+                                                    <input type="button" class="btn-remove" value="REMOVE" 
+                                               onclick="location.href = '/removePhoto/{{$photo->id}}';">
+                                                </p>
+                                            </div>
+                                        </div>
+                                    @endforeach  
+                                    </div>         
+                              </div>
                             </div>
                         </div>
                     </div>    

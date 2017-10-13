@@ -21,7 +21,7 @@
                                 <div class="wrap mcb-wrap one valign-top clearfix">
                                     <div class="column mcb-column one column_column">
                                         <div class="column_attr clearfix">
-                                            <h2>Manage Projects</h2>
+                                            <h2>Manage Projects - Add New Project</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -29,21 +29,37 @@
                                     <div class="mcb-wrap-inner">
                                         <div class="column mcb-column one column_column">
                                             <div class="column_attr clearfix" style=" padding:0 15% 0 0;">
-                                                <input type="button" class="btn-add" value="ADD A NEW PROJECT" onclick="location.href = '/newProject';"><br/><br/>
-                                                <p>
-                                                    Select a Project below;
-                                                </p>
-                                                <ul style="list-style:square;">
-                                                    @foreach($projects as $project)
-                                                        <li>
-                                                            {{$loop->iteration}}. {{$project->title}}
-                                                            <input type="button" class="btn-edit" value="EDIT PROJECT" onclick="location.href = '/editProject/{{$project->id}}';"> 
-                                                            <input type="button" class="btn-warning" value="REMOVE PROJECT" onclick="location.href = '/removeProject/{{$project->id}}';"> 
-                                                            <input type="button" class="btn-remove" value="ADD PHOTO" onclick="location.href = '/addPhoto/{{$project->id}}';">
-                                                            <input type="button" class="btn-change" value="CHANGE COVER" onclick="location.href = '/changeCover/{{$project->id}}';">
-                                                        </li>
-                                                    @endforeach
-                                                </ul> 
+                                                <p>Enter a Project Detials below;</p>
+                                                <form method="POST" action="/addProject" enctype="multipart/form-data"> {!! csrf_field() !!}
+                                                    @if(count($errors) > 0)
+                                                        <ul style="color:#ff1e1e;">
+                                                            @foreach($errors->all() as $error)
+                                                                <li>{{ $error }}</li>
+                                                            @endforeach
+                                                        </ul>
+                                                    @endif
+
+                                                    <div class="form-group">
+                                                        <label for="title">Project Title:</label>
+                                                        <input type="text" cols="100" name="title" id="title" class="form-control" style="width: 600px;"  required>
+                                                    </div>
+                                                    
+                                                    <div class="form-group">
+                                                        <label for="details">Project Details:</label>
+                                                        <textarea name="details" class="form-control" required>
+                                                            
+                                                        </textarea><br/>
+                                                    </div>
+
+                                                    <div class="form-group ">
+                                                        <label for="cover">Cover:</label>
+                                                        <input type="file" name="cover" class="form-control" required/>
+                                                        <br/><br/>
+                                                    </div>
+                                                    
+                                                    <input type="submit" class="btn-add" value="ADD PROJECT">
+                                                </form>  
+
                                             </div>
                                         </div>
                                     </div>

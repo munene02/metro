@@ -1,6 +1,8 @@
 #menu ul li a span {
 	font-weight: bold;
 }
+input.btn-warning{background-color:#ff9000; }
+input.btn-warning:hover{background-color:#e16500; }
 input.btn-edit{background-color:#4acefc; }
 input.btn-edit:hover{background-color:#0373a7; }
 input.btn-remove{background-color:#05abf9; }

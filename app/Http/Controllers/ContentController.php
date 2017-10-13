@@ -12,6 +12,7 @@ use App\Image;
 use App\Service;
 use App\Journal;
 use App\Project;
+use App\Photo;
 
 class ContentController extends Controller
 {
@@ -79,7 +80,7 @@ class ContentController extends Controller
     //Projects Page
     public function projectsPage()
     {
-        $projects = Project::orderBy('created_at','desc')->get();
+        $projects = Project::where('status','no')->orderBy('created_at','desc')->get();
 
         return view('project-page', compact('projects'));
     }
@@ -88,14 +89,13 @@ class ContentController extends Controller
     {
         if($request->id){
             $project = Project::where('id', '=', $request->id)->first();
-            $images = Image::where('page', '=', $request->id)->get();
+            $photos = Photo::where([['project_id', '=', $request->id],['status', '=', 'no']])->get();
  
-            //return $images; 
-            return view('project-entry', compact('project', 'images'));
+            return view('project-entry', compact('project', 'photos'));
         }
         else{
 
-            return redirect('/projects');
+            return redirect('/project');
         }
      
     }
