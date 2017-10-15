@@ -43,11 +43,15 @@
     <script src="{{ asset("/js/summernote.js") }}"></script>
     <script src="{{ asset("/js/tinymce/tinymce.min.js") }}"></script>
     <script src="{{ asset("/js/scripts.js") }}"></script>
-    <script src="{{ asset("/js/gmap.js") }}"></script>
+    
     <script src="{{ asset("/css/dropzone/dropzone.min.js") }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.js"></script>
-   {{--  <script src="http://maps.google.com/maps/api/js?sensor=false&ver=5.9"></script> --}}
+    {{-- <script src="http://maps.google.com/maps/api/js?sensor=false&ver=5.9"></script> --}}
     <script src="{{ asset("/js/email.js") }}"></script>
+    {{-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> --}}
+    <script src="{{ asset("/js/jquery.gmap.min.js") }}"></script>
+    <script src="{{ asset("/js/gmap.js") }}"></script>
+
     @include('Alerts::alerts')
     @include('script')
     <script>
@@ -81,6 +85,30 @@
         var mobileStickyLogoW = mobileStickyEl.width();
         var mobileStickyLogoH = mobileStickyEl.height();
         mobileStickyEl.attr("src", "images/retina-productions.png").width(mobileStickyLogoW).height(mobileStickyLogoH);
+      }
+    });
+  </script>
+  <script>
+    $(".map").gMap({
+      maptype: 'ROADMAP',
+      scrollwheel: false,
+      zoom: 16,
+      //latitude: -1.235445,
+      //longitude: 36.671668,-1.236335, 36.672803
+      markers: [
+      {
+      latitude: -1.236496,
+      longitude: 36.672953,
+      html: "Marimo Constrution Ltd"
+      }
+      ],
+      controls: {
+        panControl: true,
+        zoomControl: true,
+        mapTypeControl: true,
+        scaleControl: false,
+        streetViewControl: false,
+        overviewMapControl: false
       }
     });
   </script>

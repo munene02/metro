@@ -33,7 +33,7 @@
                                     <div class="mcb-wrap-inner">
                                         <div class="column mcb-column one column_map ">
                                             <div class="google-map-wrapper no_border">
-                                                <div class="google-map" id="google-map-area-58feedaf52c82" style="width:100%; height:800px">
+                                                <div class="google-map" id="google-map-area-58feedaf52c82" style="width:100%; height:500px">
                                                     &nbsp;
                                                 </div>
                                             </div>
