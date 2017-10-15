@@ -43,8 +43,8 @@
     <script src="{{ asset("/js/summernote.js") }}"></script>
     <script src="{{ asset("/js/tinymce/tinymce.min.js") }}"></script>
     <script src="{{ asset("/js/scripts.js") }}"></script>
+    <script src="{{ asset("/js/gmap.js") }}"></script>
     <script src="{{ asset("/css/dropzone/dropzone.min.js") }}"></script>
-    <script src="{{ asset("/css/dropzone/gmap.js") }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.js"></script>
    {{--  <script src="http://maps.google.com/maps/api/js?sensor=false&ver=5.9"></script> --}}
     <script src="{{ asset("/js/email.js") }}"></script>
