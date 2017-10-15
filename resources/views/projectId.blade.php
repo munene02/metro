@@ -45,7 +45,7 @@
                                                     
                                                     <div class="form-group">
                                                         <label for="details">Project Details:</label>
-                                                        <textarea name="details" class="form-control" required>
+                                                        <textarea name="details" class="form-control" id="textarea" required>
                                                             {!! $project['details'] !!}
                                                         </textarea>
                                                     </div>

@@ -45,11 +45,13 @@
     <script src="{{ asset("/js/scripts.js") }}"></script>
     <script src="{{ asset("/css/dropzone/dropzone.min.js") }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false&ver=5.9"></script>
+    <script src="{{ asset("/js/email.js") }}"></script>
     @include('Alerts::alerts')
     @include('script')
     <script>
       tinymce.init({
-  selector: 'textarea',
+  selector: '#textarea, #textarea2, #textarea3',
   height: 250,
   menubar: false,
   content_css: [

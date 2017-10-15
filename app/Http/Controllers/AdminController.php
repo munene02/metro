@@ -86,6 +86,7 @@ class AdminController extends Controller
 
         return redirect('/about');
     }
+
     public function newAboutImage(Request $request)
     {
         $request->file('image');
@@ -529,6 +530,32 @@ class AdminController extends Controller
         alert()->success('Journal Cover Changed', 'The Journal Cover has been successfully changed.');
      
         return redirect('/journal'); 
+    }
+
+    //Contact US
+    public function contact()
+    {
+        $text = Text::where('page', '=', 'contact')->first();
+
+        return view('contact', compact('text'));
+    }
+
+    public function saveContact(Request $request)
+    {
+        $this->validate($request, [
+            'text' => 'required',
+
+        ],
+        [
+            'text.required' => 'Contact field is empty',
+       
+        ]);
+
+        Text::where('page', 'contact')->update(['text' => $request->text]); 
+
+        alert()->success('Edit Successful', 'Contact has been successfully changed');
+
+        return redirect('/contact');
     }
 
 

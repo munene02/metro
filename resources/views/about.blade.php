@@ -43,7 +43,7 @@
 
                                                         @endif
                                                       <p>Edit the ABOUT US text below:</p>
-                                                       <textarea name="text" class="form-control" required>
+                                                       <textarea name="text" class="form-control" id="textarea" required>
                                                        {!! $text['text'] !!}
                                                        </textarea>
                                                   

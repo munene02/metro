@@ -1,3 +1,4 @@
+
     <script src="{{ asset("/plugins/rs-plugin/js/jquery.themepunch.tools.min.js") }}"></script>
     <script src="{{ asset("/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js") }}"></script>
     <script src="{{ asset("/plugins/rs-plugin/js/extensions/revolution.extension.video.min.js") }}"></script>
@@ -122,3 +123,124 @@
     });
 
    </script>
+
+   <script>
+        function google_maps_58feedaf52c82() {
+            var latlng = new google.maps.LatLng(-1.236113, 36.672730);
+            var draggable = true;
+            var myOptions = {
+                zoom: 15,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                styles: [{
+                    featureType: "all",
+                    elementType: "labels",
+                    stylers: [{
+                        visibility: "on"
+                }]
+               }, {
+                    featureType: "administrative",
+                    elementType: "all",
+                    stylers: [{
+                        visibility: "off"
+                }]
+               }, {
+                    featureType: "landscape",
+                    elementType: "all",
+                    stylers: [{
+                        color: "#000000"
+                }, {
+                        visibility: "simplified"
+                }]
+               }, {
+                    featureType: "poi",
+                    elementType: "all",
+                    stylers: [{
+                        visibility: "off"
+                }]
+               }, {
+                    featureType: "road",
+                    elementType: "all",
+                    stylers: [{
+                        visibility: "on"
+                }]
+               }, {
+                    featureType: "road",
+                    elementType: "geometry",
+                    stylers: [{
+                        color: "#000000"
+                }, {
+                        lightness: "30"
+                }, {
+                        saturation: "-10"
+                }]
+               }, {
+                    featureType: "road",
+                    elementType: "labels.text",
+                    stylers: [{
+                        visibility: "on"
+                }]
+               }, {
+                    featureType: "road",
+                    elementType: "labels.text.fill",
+                    stylers: [{
+                        color: "#000000"
+                }, {
+                        lightness: "80"
+                }]
+               }, {
+                    featureType: "road",
+                    elementType: "labels.text.stroke",
+                    stylers: [{
+                        color: "#000000"
+                }, {
+                        lightness: "0"
+                }]
+               }, {
+                    featureType: "road",
+                    elementType: "labels.icon",
+                    stylers: [{
+                        visibility: "off"
+                }]
+               }, {
+                    featureType: "transit",
+                    elementType: "all",
+                    stylers: [{
+                        visibility: "simplified"
+                }, {
+                        color: "#000000"
+                }, {
+                        lightness: "50"
+                }]
+               }, {
+                    featureType: "transit.station",
+                    elementType: "all",
+                    stylers: [{
+                        visibility: "off"
+                }]
+               }, {
+                    featureType: "water",
+                    elementType: "all",
+                    stylers: [{
+                        color: "#000000"
+                }, {
+                        lightness: "-20"
+                }]
+               }],
+                draggable: draggable,
+                zoomControl: true,
+                mapTypeControl: false,
+                streetViewControl: false,
+                scrollwheel: false
+            };
+            var map = new google.maps.Map(document.getElementById("google-map-area-58feedaf52c82"), myOptions);
+            var marker = new google.maps.Marker({
+                position: latlng,
+                icon: "images/home_productions_pin.png",
+                map: map
+            });
+        }
+        jQuery(document).ready(function ($) {
+            google_maps_58feedaf52c82();
+        });
+    </script>

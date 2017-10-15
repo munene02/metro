@@ -103,6 +103,8 @@ class ContentController extends Controller
     //Contacts Page
     public function contactPage()
     {
-        return 'hello';
+        $text = Text::where('page', '=', 'contact')->first();
+        
+        return view('contact-page', compact('text'));
     }
 }

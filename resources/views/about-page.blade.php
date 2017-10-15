@@ -35,7 +35,8 @@
                                             <div class="column_attr clearfix">
                                                 
                                                 <div style="text-align: justify;padding: 39px;line-height: 19px;color: #333;">
-                                                {!! $text['text'] !!}</div>
+                                                {!! $text['text'] !!}
+                                              </div>
                                             </div>
                                         </div>
                                     </div>

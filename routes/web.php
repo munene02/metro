@@ -64,5 +64,8 @@ Route::post('/addJournal', 'AdminController@addJournal')->middleware('admin');
 Route::post('/saveJournal', 'AdminController@saveJournal')->middleware('admin');
 Route::post('/saveCoverJ', 'AdminController@saveCoverJ')->middleware('admin');
 
+Route::get('/contact', 'AdminController@contact')->middleware('admin');
+Route::post('/saveContact', 'AdminController@saveContact')->middleware('admin');
+
 
 

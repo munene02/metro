@@ -49,7 +49,7 @@
                                                       </div>
                                                       <div class="form-group">
                                                         <label for="description">Description:</label>
-                                                       <textarea name="description" class="form-control" required>
+                                                       <textarea name="description" class="form-control" id="textarea" required>
                                                        {!! $cservice['description'] !!}
                                                        </textarea>
                                                       </div>
@@ -160,7 +160,7 @@
                                                       </div>
                                                       <div class="form-group">
                                                         <label for="description">Description:</label>
-                                                       <textarea name="description" class="form-control" required>
+                                                       <textarea name="description" class="form-control" id="textarea2" required>
                                                        {!! $pservice['description'] !!}
                                                        </textarea>
                                                       </div>
@@ -273,7 +273,7 @@
                                                       </div>
                                                       <div class="form-group">
                                                         <label for="description">Description:</label>
-                                                       <textarea name="description" class="form-control" required>
+                                                       <textarea name="description" class="form-control" id="textarea3" required>
                                                        {!! $fservice['description'] !!}
                                                        </textarea>
                                                       </div>
