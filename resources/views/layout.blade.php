@@ -15,11 +15,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="shortcut icon" href="images/favicon.ico">
 
-  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,700'>
+  {{-- <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,700'>
   <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Patua+One:100,300,400,400italic,700'>
   <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Work+Sans:100,300,400,400italic,500,700,700italic'>
   <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Playfair+Display:100,300,400,400italic,500,700,700italic'>
-  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:100,300,400'>
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:100,300,400'> --}}
 
   <link rel="stylesheet" href="{{ asset("/css/global.css") }}">
   <link rel="stylesheet" href="{{ asset("/css/structure.css") }}">
@@ -44,8 +44,9 @@
     <script src="{{ asset("/js/tinymce/tinymce.min.js") }}"></script>
     <script src="{{ asset("/js/scripts.js") }}"></script>
     <script src="{{ asset("/css/dropzone/dropzone.min.js") }}"></script>
+    <script src="{{ asset("/css/dropzone/gmap.js") }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.js"></script>
-    <script src="http://maps.google.com/maps/api/js?sensor=false&ver=5.9"></script>
+   {{--  <script src="http://maps.google.com/maps/api/js?sensor=false&ver=5.9"></script> --}}
     <script src="{{ asset("/js/email.js") }}"></script>
     @include('Alerts::alerts')
     @include('script')
