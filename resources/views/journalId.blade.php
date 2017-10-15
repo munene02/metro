@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-@php $page='project'; @endphp
+@php $page='journal'; @endphp
 
 <body class="home template-slider color-custom style-simple layout-full-width button-flat if-zoom no-content-padding header-transparent header-fw minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-no-borders menuo-right footer-copy-center mobile-tb-center mobile-side-slide mobile-mini-mr-ll tablet-sticky mobile-header-mini mobile-sticky tr-content">
     <div id="Wrapper">
@@ -21,7 +21,7 @@
                                 <div class="wrap mcb-wrap one valign-top clearfix">
                                     <div class="column mcb-column one column_column">
                                         <div class="column_attr clearfix">
-                                            <h2>Manage Projects - Add New Project</h2>
+                                            <h2>Manage Journal</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -29,8 +29,7 @@
                                     <div class="mcb-wrap-inner">
                                         <div class="column mcb-column one column_column">
                                             <div class="column_attr clearfix" style=" padding:0 15% 0 0;">
-                                                <p>Enter a Project Detials below;</p>
-                                                <form method="POST" action="/addProject" enctype="multipart/form-data"> {!! csrf_field() !!}
+                                                <form method="POST" action="/saveJournal"> {!! csrf_field() !!}
                                                     @if(count($errors) > 0)
                                                         <ul style="color:#ff1e1e;">
                                                             @foreach($errors->all() as $error)
@@ -38,28 +37,28 @@
                                                             @endforeach
                                                         </ul>
                                                     @endif
+                                                    <p>Edit the journal details below:</p>
+                                                    <div class="form-group">
+                                                        <label for="title">Journal Title:</label>
+                                                        <input type="text" cols="100" name="title" id="title" class="form-control" style="width: 600px;" value="{{$journal['title']}}" required>
+                                                    </div>
 
                                                     <div class="form-group">
-                                                        <label for="title">Project Title:</label>
-                                                        <input type="text" cols="100" name="title" id="title" class="form-control" style="width: 600px;"  required>
+                                                        <label for="description">Journal Description:</label>
+                                                        <textarea name="description" class="form-control" required>
+                                                            {!! $journal['description'] !!}
+                                                        </textarea>
                                                     </div>
                                                     
                                                     <div class="form-group">
-                                                        <label for="details">Project Details:</label>
+                                                        <label for="details">Journal Details:</label>
                                                         <textarea name="details" class="form-control" required>
-                                                            
-                                                        </textarea><br/>
+                                                            {!! $journal['details'] !!}
+                                                        </textarea>
                                                     </div>
-
-                                                    <div class="form-group ">
-                                                        <label for="cover">Cover:(HINT:1440px X 900px)</label>
-                                                        <input type="file" name="cover" class="form-control" required/>
-                                                        <br/><br/>
-                                                    </div>
-                                                    
-                                                    <input type="submit" class="btn-add" value="ADD PROJECT">
-                                                </form>  
-
+                                                    <input type="hidden" name="id" value="{{$journal['id']}}">
+                                                    <input type="submit" class="btn-edit" value="SAVE JOURNAL">
+                                                </form>                                               
                                             </div>
                                         </div>
                                     </div>

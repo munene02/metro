@@ -4,8 +4,8 @@ Route::get('/', 'ContentController@homePage');
 Route::get('/aboutUs', 'ContentController@aboutUsPage');
 Route::get('/services', 'ContentController@servicesPage');
 Route::get('/projects', 'ContentController@projectsPage');
-Route::get('/journal', 'ContentController@journalPage');
-Route::get('/contact', 'ContentController@contactPage');
+Route::get('/journals', 'ContentController@journalPage');
+Route::get('/contacts', 'ContentController@contactPage');
 Route::get('/journal/{id}', 'ContentController@journalEntry');
 Route::get('/projects/{id}', 'ContentController@projectEntry');
 
@@ -53,6 +53,16 @@ Route::post('/addProject', 'AdminController@addProject')->middleware('admin');
 Route::post('/saveProject', 'AdminController@saveProject')->middleware('admin'); 
 Route::post('/savePhoto', 'AdminController@savePhoto')->middleware('admin'); 
 Route::post('/saveCover', 'AdminController@saveCover')->middleware('admin');
+
+Route::get('/journal', 'AdminController@journal')->middleware('admin'); 
+Route::get('/newJournal', function () { return view('newJournal');})->middleware('admin'); 
+Route::get('/editJournal/{id}', 'AdminController@editJournal')->middleware('admin'); 
+Route::get('/changeCoverJ/{id}', 'AdminController@changeCoverJ')->middleware('admin');
+Route::get('/removeJournal/{id}', 'AdminController@removeJournal')->middleware('admin');  
+
+Route::post('/addJournal', 'AdminController@addJournal')->middleware('admin');  
+Route::post('/saveJournal', 'AdminController@saveJournal')->middleware('admin');
+Route::post('/saveCoverJ', 'AdminController@saveCoverJ')->middleware('admin');
 
 
 

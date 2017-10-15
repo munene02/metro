@@ -29,6 +29,14 @@
                               <a href="/project"><span>PROJECT</span></a>
                                      
                           </li>
+                          <li @php if($page=='journal') echo 'class="current-menu-item"'; @endphp >
+                              <a href="/journal"><span>JOURNAL</span></a>
+                                     
+                          </li>
+                          <li @php if($page=='contact') echo 'class="current-menu-item"'; @endphp >
+                              <a href="/contact"><span>CONTACT</span></a>
+                                     
+                          </li>
                           <li>
                             <a href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();

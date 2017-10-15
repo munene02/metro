@@ -44,12 +44,12 @@
                                             <h3 style="padding:  0px 20px 0px 30px;"><a href="/journal/{{$journal->id}}" style=" color: #02bbca;">{{$journal->title}}</a><br>
                                                 <small style="font-size: 11px;padding-top: 0px;margin-top: 0px;margin-left: 0px;color: #999;">{{ Carbon\Carbon::parse($journal->created_at)->format('D jS, M, Y') }}</small></h3>
 
-                                            <p style="text-align: justify;padding: 0px 20px 0px 30px;line-height: 19px;color: #333;">
+                                            <div style="text-align: justify;padding: 0px 20px 0px 30px;line-height: 19px;color: #333;">
 
                                                 {!! $journal->description !!}
                                                 <br>
                                                 <a href="/journal/{{$journal->id}}" target="_blank">READ MORE...</a>
-                                            </p>
+                                            </div>
 
                                         </div>
                                     </div>

@@ -430,7 +430,7 @@ class AdminController extends Controller
         $project->status = 'no';
         $project->save();
 
-        alert()->success('New Project Added', 'The New Project has been successfully changed.');
+        alert()->success('New Project Added', 'The New Project has been successfully ADDED.');
      
         return redirect('/project');
     }
@@ -442,5 +442,95 @@ class AdminController extends Controller
      
         return redirect('/project');
     }
+
+    //journal
+    public function journal()
+    {
+        $journals = Journal::where('status','no')->orderBy('created_at','desc')->get();
+
+        return view('journal', compact('journals'));
+    }
+
+    public function addJournal(Request $request)
+    {
+        $request->file('cover');
+        $extension = $request->file('cover')->extension();
+
+        $time = Carbon::now()->timestamp;
+        $name = $time.'.'.$extension;
+
+        $request->cover->storeAs('public', $name);
+        $url = Storage::url($name);
+
+        $journal = new Journal;
+        $journal->title = $request->title;
+        $journal->description = $request->description;
+        $journal->details = $request->details;
+        $journal->cover = $url;
+        $journal->status = 'no';
+        $journal->save();
+
+        alert()->success('New Journal Added', 'The New Journal Entry has been successfully ADDED.');
+     
+        return redirect('/journal');
+    }
+
+    public function editJournal(Request $request)
+    {
+        if($request->id){
+            $journal = Journal::where('id', '=', $request->id)->first();
+
+            return view('journalId', compact('journal'));
+        }
+        else{
+
+            return redirect('/journal');
+        }
+    }
+
+    public function saveJournal(Request $request)
+    {
+        Journal::where('id', $request->id)->update(['title' => $request->title]);
+        Journal::where('id', $request->id)->update(['description' => $request->description]);
+        Journal::where('id', $request->id)->update(['details' => $request->details]);
+
+        alert()->success('Journal Details SAVED', 'The Journal has been successfully changed.');
+
+        return redirect('/editJournal/'.$request->id);
+    }
+
+    public function removeJournal(Request $request)
+    {
+        Journal::where('id', $request->id)->update(['status' => 'yes']); 
+        alert()->success('Journal Removed', 'The Journal has been successfully REMOVED.');
+     
+        return redirect('/journal');
+    }
+
+    public function changeCoverJ(Request $request)
+    {
+        $journal = Journal::where('id', '=', $request->id)->first();
+        return view('changeCoverJ', compact('journal'));
+    }
+
+    public function saveCoverJ(Request $request)
+    {
+       $request->file('photo');
+        $extension = $request->file('photo')->extension();
+
+        $time = Carbon::now()->timestamp;
+        $name = $time.'.'.$extension;
+
+        $request->photo->storeAs('public', $name);
+        $url = Storage::url($name);
+
+        Journal::where('id', $request->id)->update(['cover' => $url]);
+
+        alert()->success('Journal Cover Changed', 'The Journal Cover has been successfully changed.');
+     
+        return redirect('/journal'); 
+    }
+
+
 
 }

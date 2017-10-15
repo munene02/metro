@@ -1,7 +1,8 @@
 @extends('layout')
 
 @section('content')
-@php $page='about'; @endphp
+@php $page='journal'; @endphp
+
 <body class="home template-slider color-custom style-simple layout-full-width button-flat if-zoom no-content-padding header-transparent header-fw minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-no-borders menuo-right footer-copy-center mobile-tb-center mobile-side-slide mobile-mini-mr-ll tablet-sticky mobile-header-mini mobile-sticky tr-content">
 
     <div id="Wrapper">
@@ -22,7 +23,7 @@
                                  
                                       <div class="column mcb-column one column_column">
                                           <div class="column_attr clearfix">
-                                              <h2>Add Project Photo</h2>
+                                              <h2>Change Journal Cover</h2>
                                           </div>
                                       </div>
                               </div>
@@ -30,8 +31,8 @@
                                   <div class="mcb-wrap-inner">
                                       <div class="column mcb-column one column_column">
                                         <div class="column_attr clearfix" style="padding:0 10% 0 0">
-                                        <h6>Upload a {{$project['title']}} Photo:(HINT:1440px X 900px)</h6>  
-                                  <form enctype="multipart/form-data" method="POST" action="/savePhoto">
+                                        <h6>Upload a {{$journal['title']}} Cover:(HINT:1440px X 900px)</h6>  
+                                  <form enctype="multipart/form-data" method="POST" action="/saveCoverJ">
                                       {!! csrf_field() !!}
                                       @if(count($errors) > 0)
                                       <div class="alert alert-danger">
@@ -45,15 +46,15 @@
                                       @endif
 
                                       <div class="form-group ">
-                                        <label for="slider">Photo:</label>
+                                        <label for="slider">Cover:</label>
                                         <input type="file" name="photo" class="form-control" required/>
                                         <br/><br/>
                                       </div>
-                                      <input type="hidden" name="id" value="{{$project->id}}">
+                                      <input type="hidden" name="id" value="{{$journal->id}}">
 
                                       <div class="col-md-12">
                                         <div class="form-group">
-                                                <button type="submit" class="btn btn-primary">ADD PHOTO</button> 
+                                                <button type="submit" class="btn btn-primary">UPLOAD COVER</button> 
                                         </div>
                                       </div>
                                     

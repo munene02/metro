@@ -1,7 +1,8 @@
 @extends('layout')
 
 @section('content')
-@php $page='about'; @endphp
+@php $page='project'; @endphp
+
 <body class="home template-slider color-custom style-simple layout-full-width button-flat if-zoom no-content-padding header-transparent header-fw minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-no-borders menuo-right footer-copy-center mobile-tb-center mobile-side-slide mobile-mini-mr-ll tablet-sticky mobile-header-mini mobile-sticky tr-content">
 
     <div id="Wrapper">
@@ -30,7 +31,7 @@
                                   <div class="mcb-wrap-inner">
                                       <div class="column mcb-column one column_column">
                                         <div class="column_attr clearfix" style="padding:0 10% 0 0">
-                                        <h6>Upload a {{$project['title']}} Cover;</h6>  
+                                        <h6>Upload a {{$project['title']}} Cover:(HINT:1440px X 900px)</h6>  
                                   <form enctype="multipart/form-data" method="POST" action="/saveCover">
                                       {!! csrf_field() !!}
                                       @if(count($errors) > 0)

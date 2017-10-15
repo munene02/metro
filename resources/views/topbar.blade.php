@@ -26,10 +26,10 @@
                               <a href="/projects"><span>PROJECTS</span></a>
                           </li>
                           <li  @php if($page=='journal') echo 'class="current-menu-item"'; @endphp >
-                              <a href="/journal"><span>JOURNAL</span></a>
+                              <a href="/journals"><span>JOURNAL</span></a>
                           </li>
                           <li  @php if($page=='contact') echo 'class="current-menu-item"'; @endphp >
-                              <a href="/contact"><span>CONTACT</span></a>
+                              <a href="/contacts"><span>CONTACT</span></a>
                           </li>
                       </ul>
                   </nav>
