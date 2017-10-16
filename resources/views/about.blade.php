@@ -101,7 +101,7 @@
                                  
                                       <div class="column mcb-column one column_column">
                                           <div class="column_attr clearfix">
-                                              <h2>Current Images</h2>
+                                              <h3>Current Images</h3>
                                           </div>
                                       </div>
                               </div>
@@ -121,7 +121,52 @@
                                       </div>
                                     @endforeach  
                                   </div>         
-                          </div>
+                              </div>
+                              <div class="wrap mcb-wrap one valign-top clearfix">
+                                 
+                                      <div class="column mcb-column one column_column">
+                                          <div class="column_attr clearfix">
+                                              <h2>Our Team <br><input type="button" class="btn-add" value="ADD TO THE TEAM" 
+                                               onclick="location.href = '/newTeamMate';"></h2>
+                                          </div>
+                                      </div>
+                              </div>
+                              <div class="wrap mcb-wrap one  valign-top clearfix" style="margin-top:-25px">
+                                  <div class="mcb-wrap-inner">
+                                    @foreach($teams as $team)
+                                      <div class="column mcb-column one-third column_column">
+                                          <div class="column_attr clearfix" style=" padding:0 15% 0 0;">
+
+                                              <img src="{{ asset($team->photo) }}" alt="" width="400" height="400" />
+                                              
+                                             <form method="POST" action="/saveTeamMate"> {!! csrf_field() !!}
+                                                      @if(count($errors) > 0)
+                                                       
+                                                          <ul style="color:#ff1e1e;">
+                                                            @foreach($errors->all() as $error)
+                                                            <li>{{ $error }}</li>
+                                                            @endforeach
+                                                          </ul>
+                                                        @endif
+                                                      <input type="text" name="name" value="{{$team->name}}" >
+                                                       <textarea name="details" class="form-control" id="textarea" required>
+                                                       {!! $team->details !!}
+                                                       </textarea>
+                                                  <input type="hidden" name="id" value="{{$team->id}}">
+                                                  <input type="submit" class="btn-edit" value="SAVE INFO">
+                                             </form>
+                                              <p >
+                                               <input type="button" class="btn-warning" value="REMOVE TEAM MEMBER" 
+                                               onclick="location.href = '/removeTeamMate/{{$team->id}}';">
+
+                                             </p> 
+                                              
+                                          </div>
+                                      </div>
+                                    @endforeach  
+                                  </div>         
+                              </div>
+
                   </div>
               </div>
           </div>

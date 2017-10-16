@@ -10,6 +10,7 @@ use App\Service;
 use App\Journal;
 use App\Project;
 use App\Photo;
+use App\Team;
 use Carbon\Carbon;
 
 use Illuminate\Support\Facades\Storage;
@@ -65,8 +66,9 @@ class AdminController extends Controller
     {
         $text = Text::where('page', '=', 'about')->first();
         $images = Image::where([['page', '=', 'about'],['status', '=', 'no']])->get();
+        $teams = Team::where('status', '=', 'no')->get();
 
-        return view('about', compact('text', 'images'));
+        return view('about', compact('text', 'images', 'teams'));
     }
 
     public function saveAbout(Request $request)
@@ -84,6 +86,56 @@ class AdminController extends Controller
 
         alert()->success('Edit Successful', 'ABOUT US has been changed');
 
+        return redirect('/about');
+    }
+
+    public function addTeamMate(Request $request)
+    {
+        $request->file('photo');
+        $extension = $request->file('photo')->extension();
+
+        $time = Carbon::now()->timestamp;
+        $name = $time.'.'.$extension;
+
+        $request->photo->storeAs('public', $name);
+        $url = Storage::url($name);
+
+        $team = new Team;
+        $team->name = $request->name;
+        $team->details = $request->details;
+        $team->photo = $url;
+        $team->status = 'no';
+        $team->save();
+
+        alert()->success('New Team Member Added', 'The New Team Member has been successfully ADDED.');
+     
+        return redirect('/about');
+    }
+    public function saveTeamMate(Request $request)
+    {
+        $this->validate($request, [
+            'details' => 'required',
+            'name' => 'required'
+
+        ],
+        [
+            'name.required' => 'Name field is empty',
+            'details.required' => 'Details field is empty',
+       
+        ]);
+
+        Team::where('id', $request->id)->update(['details' => $request->details]);
+        Team::where('id', $request->id)->update(['name' => $request->name]); 
+
+        alert()->success('Edit Successful', 'Tema Member Detaisl have been changed');
+
+        return redirect('/about');
+    }
+    public function removeTeamMate(Request $request)
+    {
+        Team::where('id', $request->id)->update(['status' => 'yes']); 
+        alert()->success('Team Member Removed', 'The Team Member has been successfully REMOVED.');
+     
         return redirect('/about');
     }
 

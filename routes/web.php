@@ -27,6 +27,10 @@ Route::get('/about', 'AdminController@about')->middleware('admin');
 Route::post('/saveAbout', 'AdminController@saveAbout')->middleware('admin');
 Route::post('/newAboutImage', 'AdminController@newAboutImage')->middleware('admin');
 Route::get('/removeAboutImage/{id}', 'AdminController@removeAboutImage')->middleware('admin');
+Route::get('/newTeamMate', function () { return view('newTeamMate');})->middleware('admin');
+Route::post('/addTeamMate', 'AdminController@addTeamMate')->middleware('admin');
+Route::post('/saveTeamMate', 'AdminController@saveTeamMate')->middleware('admin');
+Route::get('/removeTeamMate/{id}', 'AdminController@removeTeamMate')->middleware('admin');
 
 Route::get('/service', 'AdminController@service')->middleware('admin');
 Route::post('/save1', 'AdminController@save1')->middleware('admin');

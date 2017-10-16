@@ -16,8 +16,7 @@
       <div id="Content">
             <div class="content_wrapper clearfix">
                 <div class="sections_group">
-                    <div class="entry-content">
-                        
+                    <div class="entry-content">                       
                         <div class="section mcb-section" style="padding-top:120px; padding-bottom:120px;" data-parallax="3d">
                             <div class="section_wrapper mcb-section-inner">
                               <div class="wrap mcb-wrap one valign-top clearfix">
@@ -72,6 +71,41 @@
                 </div>
 
             </div>
+            @if(!$teams->isEmpty())
+            <div class="content_wrapper clearfix" style="background-color: #48c7f4">
+                <div class="sections_group">
+                    <div class="entry-content">                       
+                         <div class="section mcb-section" style="padding-top:60px; padding-bottom:120px;" data-parallax="3d">
+                              <div class="section_wrapper mcb-section-inner">
+                                   <div class="wrap mcb-wrap one valign-top clearfix">
+                                        <div class="mcb-wrap-inner">
+                                             <div class="column mcb-column one column_column">
+                                                 <div class="column_attr clearfix">
+                                                     <h2 style="text-shadow:#000 1px 2px 2px;color: #fff;padding-bottom: 15px;">Our Team</h2>
+                                                 </div>
+                                                 @foreach($teams as $team)
+                                                  <div class="column mcb-column one-third column_column" style="margin-right:10px;">
+                                                      <div class="column_attr clearfix">
+                                                            <div style="line-height: 19px;color: #333;">
+                                                                 <img src="{{ asset($team->photo) }}" alt="" width="400" height="400"><br>
+                                                                 <h4 style="color: #000;">{{$team->name}}</h4>
+                                                                 <div style="   line-height: 19px;color: #333;">
+                                                                    {!! $team->details !!}
+                                                                 </div>
+                                                            </div>
+                                                      </div>
+                                                  </div>
+                                                  @endforeach
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                              
+                         </div>
+                    </div>
+               </div>
+          </div>
+          @endif
         </div>
 
       @include('footer')    

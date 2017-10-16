@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-@php $page='project'; @endphp
+@php $page='about'; @endphp
 
 <body class="home template-slider color-custom style-simple layout-full-width button-flat if-zoom no-content-padding header-transparent header-fw minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-no-borders menuo-right footer-copy-center mobile-tb-center mobile-side-slide mobile-mini-mr-ll tablet-sticky mobile-header-mini mobile-sticky tr-content">
     <div id="Wrapper">
@@ -21,7 +21,7 @@
                                 <div class="wrap mcb-wrap one valign-top clearfix">
                                     <div class="column mcb-column one column_column">
                                         <div class="column_attr clearfix">
-                                            <h2>Manage Projects - Add New Project</h2>
+                                            <h2>Manage About Us - Add New Team Member</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -29,8 +29,8 @@
                                     <div class="mcb-wrap-inner">
                                         <div class="column mcb-column one column_column">
                                             <div class="column_attr clearfix" style=" padding:0 15% 0 0;">
-                                                <p>Enter a Project Details below;</p>
-                                                <form method="POST" action="/addProject" enctype="multipart/form-data"> {!! csrf_field() !!}
+                                                <p>Enter a Team Member Details below;</p>
+                                                <form method="POST" action="/addTeamMate" enctype="multipart/form-data"> {!! csrf_field() !!}
                                                     @if(count($errors) > 0)
                                                         <ul style="color:#ff1e1e;">
                                                             @foreach($errors->all() as $error)
@@ -40,24 +40,24 @@
                                                     @endif
 
                                                     <div class="form-group">
-                                                        <label for="title">Project Title:</label>
-                                                        <input type="text" cols="100" name="title" id="title" class="form-control" style="width: 600px;"  required>
+                                                        <label for="title">Team Member Name:</label>
+                                                        <input type="text" cols="100" name="name"  class="form-control" style="width: 600px;"  required>
                                                     </div>
                                                     
                                                     <div class="form-group">
-                                                        <label for="details">Project Details:</label>
-                                                        <textarea name="details" class="form-control" required>
+                                                        <label for="details">Team Member Details:</label>
+                                                        <textarea name="details" class="form-control" id="textarea" required>
                                                             
                                                         </textarea><br/>
                                                     </div>
 
                                                     <div class="form-group ">
-                                                        <label for="cover">Cover:(HINT:1440px X 900px)</label>
-                                                        <input type="file" name="cover" class="form-control" required/>
+                                                        <label for="photo">Team Member Photo:(HINT:400px X 400px)</label>
+                                                        <input type="file" name="photo" class="form-control" required/>
                                                         <br/><br/>
                                                     </div>
                                                     
-                                                    <input type="submit" class="btn-add" value="ADD PROJECT">
+                                                    <input type="submit" class="btn-add" value="ADD TEAM MEMBER">
                                                 </form>  
 
                                             </div>

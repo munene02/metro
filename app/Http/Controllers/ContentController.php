@@ -13,6 +13,7 @@ use App\Service;
 use App\Journal;
 use App\Project;
 use App\Photo;
+use App\Team;
 
 class ContentController extends Controller
 {
@@ -34,10 +35,11 @@ class ContentController extends Controller
     public function aboutUsPage()
     {
         $text = Text::where('page', '=', 'about')->first();
+        $teams = Team::where('status', '=', 'no')->get();
         $images = Image::where([['page', '=', 'about'],['status', '=', 'no']])->get();
 
         //return $text;
-        return view('about-page', compact('text', 'images'));
+        return view('about-page', compact('text', 'images', 'teams'));
     }
 
     //Services Page
