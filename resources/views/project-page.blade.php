@@ -31,7 +31,7 @@
                             
                             <div class="wrap mcb-wrap one valign-top clearfix" >
                                 @foreach($projects as $project)
-                                <div class="wrap mcb-wrap one-second valign-top journal" >
+                                <div class="wrap mcb-wrap one-second valign-top journal" style="margin-top: 20px;">
                                     <div class="mcb-wrap-inner">
                                         <div class="column mcb-column column_column clearfix">
                                             <div class="column_attr clearfix" style="background-color:#ffffff;margin-bottom: 50px;">
