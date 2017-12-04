@@ -46,7 +46,7 @@
     
     <script src="{{ asset("/css/dropzone/dropzone.min.js") }}"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.js"></script>
-    <script src="//maps.google.com/maps/api/js?key=AIzaSyCdtRoN0KPpOgj9haRJLu0fklERCdnD0X0&ver=5.9"></script>
+    <script src="//maps.google.com/maps/api/js?key=AIzaSyCdtRoN0KPpOgj9haRJLu0fklERCdnD0X0"></script>
 
     <script src="{{ asset("/js/email.js") }}"></script>
 
