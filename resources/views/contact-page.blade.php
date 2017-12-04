@@ -32,12 +32,12 @@
                                 <div class="wrap mcb-wrap one valign-top clearfix">
                                     <div class="mcb-wrap-inner">
                                         <div class="column mcb-column one column_map ">
-                                            {{-- <div class="google-map-wrapper no_border">
+                                            <div class="google-map-wrapper no_border">
                                                 <div class="google-map" id="google-map-area-58feedaf52c82" style="width:100%; height:500px">
                                                     &nbsp;
                                                 </div>
-                                            </div> --}}
-                                            <div class="map" id="map-1" style="width:100%; height:500px"></div>
+                                            </div>
+                                            {{-- <div class="map" id="map-1" style="width:100%; height:500px"></div> --}}
                                         </div>
                                     </div>
                                 </div>

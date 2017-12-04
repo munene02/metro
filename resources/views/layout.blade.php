@@ -46,11 +46,12 @@
     
     <script src="{{ asset("/css/dropzone/dropzone.min.js") }}"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.js"></script>
-    {{-- <script src="http://maps.google.com/maps/api/js?sensor=false&ver=5.9"></script> --}}
+    <script src="//maps.google.com/maps/api/js?key=AIzaSyCdtRoN0KPpOgj9haRJLu0fklERCdnD0X0&sensor=false&ver=5.9"></script>
+
     <script src="{{ asset("/js/email.js") }}"></script>
-    {{-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> --}}
+
     <script src="{{ asset("/js/jquery.gmap.min.js") }}"></script>
-    <script src="{{ asset("/js/gmap.js") }}"></script>
+
     <script src="{{ asset("/js/custom.js") }}"></script>
 
     @include('Alerts::alerts')
